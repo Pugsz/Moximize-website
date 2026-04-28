@@ -972,8 +972,8 @@ function Pricing() {
 
                 {/* CTA */}
                 <div className="px-8 pb-6">
-                  <button
-                    onClick={scrollToContact}
+                  <a
+                    href={`/get-started?plan=${plan.id}&cycle=${cycle}`}
                     className={cn(
                       "w-full py-3.5 rounded-xl font-semibold text-[15px] transition-all duration-200 flex items-center justify-center gap-2",
                       plan.isPopular
@@ -982,7 +982,7 @@ function Pricing() {
                     )}
                   >
                     {plan.cta} <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </a>
                   <p className="text-center text-[11px] text-[#72767a] mt-2">
                     Starts with a free 30-min discovery call
                   </p>
