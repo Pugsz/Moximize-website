@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useHubSpotForm } from "@/hooks/useHubSpotForm";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
@@ -1200,28 +1201,7 @@ function Resources() {
 /* ── contact ──────────────────────────────────────────────────────────────── */
 
 function Contact() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "//js.hsforms.net/forms/embed/v2.js";
-    script.charset = "utf-8";
-    script.type = "text/javascript";
-    script.async = true;
-    document.body.appendChild(script);
-
-    script.onload = () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any).hbspt?.forms.create({
-        portalId: "46052923",
-        formId: "f99987c0-2f99-4532-948e-68d9ec84eab0",
-        region: "na1",
-        target: "#hs-form-container",
-      });
-    };
-
-    return () => {
-      if (document.body.contains(script)) document.body.removeChild(script);
-    };
-  }, []);
+  useHubSpotForm({ target: "#hs-form-container", redirectUrl: "/thank-you" });
 
   return (
     <section id="contact" className="py-[120px] bg-[#17181c]">
