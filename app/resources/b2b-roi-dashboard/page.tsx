@@ -27,8 +27,9 @@ export default function ROIDashboard() {
         formId: "f99987c0-2f99-4532-948e-68d9ec84eab0",
         region: "na1",
         target: "#hs-resource-form",
+        redirectUrl: "https://moximize.net/thank-you",
         onFormSubmitted: () => {
-          window.location.href = "/thank-you";
+          window.location.href = "https://moximize.net/thank-you";
         },
       });
     };
