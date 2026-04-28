@@ -16,6 +16,17 @@ const inside = [
 
 export default function ROIDashboard() {
   useEffect(() => {
+    const THANK_YOU = "/thank-you";
+
+    const observer = new MutationObserver(() => {
+      const msg = document.querySelector("#hs-resource-form .submitted-message");
+      if (msg) {
+        observer.disconnect();
+        window.location.href = THANK_YOU;
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
     const script = document.createElement("script");
     script.src = "//js.hsforms.net/forms/embed/v2.js";
     script.charset = "utf-8";
@@ -27,13 +38,18 @@ export default function ROIDashboard() {
         formId: "f99987c0-2f99-4532-948e-68d9ec84eab0",
         region: "na1",
         target: "#hs-resource-form",
-        redirectUrl: "https://moximize.net/thank-you",
+        onFormSubmit: () => {
+          setTimeout(() => { window.location.href = THANK_YOU; }, 500);
+        },
         onFormSubmitted: () => {
-          window.location.href = "https://moximize.net/thank-you";
+          window.location.href = THANK_YOU;
         },
       });
     };
-    return () => { if (document.body.contains(script)) document.body.removeChild(script); };
+    return () => {
+      observer.disconnect();
+      if (document.body.contains(script)) document.body.removeChild(script);
+    };
   }, []);
 
   return (
