@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moximize — HubSpot Partner & B2B Growth Agency</title>
+  <meta name="description" content="Moximize helps B2B companies scale through HubSpot CRM implementation, outbound marketing, and inbound strategies. 30+ companies helped. 5+ years of experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --ink:       #0A0D18;
+      --ink-2:     #141829;
+      --ink-3:     #1E2438;
+      --surface:   #F7F5F0;
+      --surface-2: #EEECEA;
+      --white:     #FFFFFF;
+      --text:      #111827;
+      --text-2:    #374151;
+      --muted:     #6B7280;
+      --line:      #E5E2DC;
+      --line-dark: rgba(255,255,255,0.10);
+      --accent:    #FF4820;
+      --accent-h:  #E53C18;
+      --gold:      #F5A623;
+      --blue:      #1A56DB;
+      --green:     #059669;
+
+      --r-sm: 6px;
+      --r-md: 12px;
+      --r-lg: 20px;
+      --r-xl: 32px;
+
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ─── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--surface);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; border: none; }
+
+    /* ─── TYPOGRAPHY ──────────────────────────────────────── */
+    .syne { font-family: 'Syne', sans-serif; }
+    h1, h2, h3, h4, h5 { font-family: 'Syne', sans-serif; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+
+    /* ─── LAYOUT ──────────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .container-wide { max-width: 1400px; margin: 0 auto; padding: 0 32px; }
+    section { position: relative; }
+
+    /* ─── BUTTONS ─────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: var(--r-sm);
+      font-family: 'Syne', sans-serif; font-weight: 600; font-size: 15px;
+      transition: all 0.2s var(--ease);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--accent); color: var(--white);
+    }
+    .btn-primary:hover { background: var(--accent-h); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,72,32,0.35); }
+    .btn-ghost {
+      background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.25);
+    }
+    .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+    .btn-outline {
+      background: transparent; color: var(--text);
+      border: 1.5px solid var(--line);
+    }
+    .btn-outline:hover { border-color: var(--text); background: var(--surface-2); }
+    .btn-dark {
+      background: var(--ink); color: var(--white);
+    }
+    .btn-dark:hover { background: var(--ink-2); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(10,13,24,0.3); }
+    .btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    }
+    .nav.scrolled {
+      background: rgba(10,13,24,0.97);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--line-dark);
+    }
+    .nav-inner {
+      display: flex; align-items: center; gap: 40px;
+      padding: 20px 32px; max-width: 1400px; margin: 0 auto;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px;
+      color: var(--white); letter-spacing: -0.03em; flex-shrink: 0;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 8px; flex: 1; }
+    .nav-link {
+      font-family: 'Syne', sans-serif; font-weight: 500; font-size: 14px;
+      color: rgba(255,255,255,0.70); padding: 6px 12px; border-radius: var(--r-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-link:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .nav-actions { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+    .nav-actions .btn { padding: 10px 20px; font-size: 14px; }
+
+    /* ─── HERO ─────────────────────────────────────────────── */
+    .hero {
+      background: var(--ink);
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 900px 600px at 70% 40%, rgba(255,72,32,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 600px 400px at 15% 80%, rgba(26,86,219,0.10) 0%, transparent 55%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+    .hero-content {
+      flex: 1; display: flex; align-items: center;
+      padding: 160px 32px 100px;
+      max-width: 1400px; margin: 0 auto; width: 100%;
+      position: relative; z-index: 1;
+    }
+    .hero-text { max-width: 780px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,72,32,0.12); border: 1px solid rgba(255,72,32,0.25);
+      color: #FF7A5A; padding: 6px 14px; border-radius: 100px;
+      font-size: 13px; font-weight: 500; margin-bottom: 32px;
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 88px);
+      color: var(--white);
+      margin-bottom: 24px;
+      line-height: 1.02;
+    }
+    .hero h1 em {
+      font-style: normal; color: var(--accent);
+      position: relative; display: inline-block;
+    }
+    .hero-sub {
+      font-size: 18px; line-height: 1.7;
+      color: rgba(255,255,255,0.60);
+      max-width: 560px; margin-bottom: 40px;
+    }
+    .hero-ctas { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex; gap: 0;
+      border-top: 1px solid var(--line-dark);
+      padding: 32px 32px; max-width: 1400px; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .hero-stat {
+      flex: 1; padding: 0 32px;
+      border-right: 1px solid var(--line-dark);
+    }
+    .hero-stat:first-child { padding-left: 0; }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 40px;
+      color: var(--white); line-height: 1; display: block; margin-bottom: 4px;
+    }
+    .hero-stat-num span { color: var(--accent); }
+    .hero-stat-label {
+      font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 400;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    /* ─── TICKER ──────────────────────────────────────────── */
+    .ticker {
+      background: var(--surface-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 0; overflow: hidden;
+    }
+    .ticker-track {
+      display: flex; gap: 0; width: max-content;
+      animation: ticker 30s linear infinite;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 0 48px; white-space: nowrap;
+      font-size: 13px; font-weight: 600; font-family: 'Syne', sans-serif;
+      color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .ticker-item::before {
+      content: ''; width: 4px; height: 4px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+    }
+
+    /* ─── SECTION HEADERS ─────────────────────────────────── */
+    .section-label {
+      font-family: 'Syne', sans-serif; font-weight: 600; font-size: 12px;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--accent); margin-bottom: 14px; display: block;
+    }
+    .section-title {
+      font-size: clamp(32px, 4vw, 52px);
+      margin-bottom: 20px; line-height: 1.08;
+    }
+    .section-sub {
+      font-size: 17px; line-height: 1.7; color: var(--muted);
+      max-width: 560px;
+    }
+
+    /* ─── SERVICES ────────────────────────────────────────── */
+    .services { padding: 120px 0; }
+    .services-header {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: end; margin-bottom: 72px;
+    }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+      background: var(--line);
+      border: 1px solid var(--line); border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+    .service-card {
+      background: var(--white); padding: 48px 40px;
+      transition: background 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--accent);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s var(--ease);
+    }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-card:hover { background: var(--surface); }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: var(--r-sm);
+      background: rgba(255,72,32,0.08); border: 1px solid rgba(255,72,32,0.15);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 28px; font-size: 22px;
+    }
+    .service-card h3 {
+      font-size: 22px; margin-bottom: 14px;
+    }
+    .service-card p { font-size: 15px; line-height: 1.65; color: var(--muted); }
+    .service-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Syne', sans-serif; font-weight: 600; font-size: 13px;
+      color: var(--accent); margin-top: 24px;
+      transition: gap 0.2s;
+    }
+    .service-link:hover { gap: 10px; }
+
+    /* ─── SOLUTIONS ───────────────────────────────────────── */
+    .solutions {
+      background: var(--ink); padding: 120px 0; overflow: hidden;
+    }
+    .solutions-header { color: var(--white); margin-bottom: 72px; }
+    .solutions-header .section-label { color: rgba(255,72,32,0.8); }
+    .solutions-header .section-title { color: var(--white); }
+    .solutions-header .section-sub { color: rgba(255,255,255,0.50); }
+    .solutions-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+      background: var(--line-dark);
+    }
+    .solution-item {
+      background: var(--ink-2); padding: 40px 28px;
+      transition: background 0.25s; position: relative;
+    }
+    .solution-item:hover { background: var(--ink-3); }
+    .solution-num {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px;
+      color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase;
+      display: block; margin-bottom: 20px;
+    }
+    .solution-item h3 {
+      font-size: 17px; color: var(--white); margin-bottom: 12px; line-height: 1.3;
+    }
+    .solution-item p { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,0.45); }
+
+    /* ─── MARKETS ─────────────────────────────────────────── */
+    .markets { padding: 120px 0; }
+    .markets-header { margin-bottom: 64px; }
+    .markets-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .market-card {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--r-md); padding: 32px;
+      display: flex; align-items: center; gap: 16px;
+      transition: all 0.2s var(--ease);
+    }
+    .market-card:hover {
+      border-color: var(--accent); transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .market-icon {
+      width: 44px; height: 44px; border-radius: var(--r-sm);
+      background: var(--surface-2); display: flex; align-items: center;
+      justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+    .market-card h3 { font-size: 16px; margin-bottom: 4px; }
+    .market-card p { font-size: 13px; color: var(--muted); }
+
+    /* ─── NUMBERS ─────────────────────────────────────────── */
+    .numbers {
+      background: var(--accent); padding: 80px 0; overflow: hidden;
+    }
+    .numbers-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; text-align: center;
+    }
+    .number-item {
+      padding: 0 40px;
+      border-right: 1px solid rgba(255,255,255,0.20);
+    }
+    .number-item:last-child { border-right: none; }
+    .number-val {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 60px;
+      color: var(--white); line-height: 1; display: block; margin-bottom: 8px;
+    }
+    .number-label { font-size: 14px; color: rgba(255,255,255,0.75); font-weight: 400; }
+
+    /* ─── TESTIMONIALS ────────────────────────────────────── */
+    .testimonials { padding: 120px 0; background: var(--surface-2); }
+    .testimonials-header { margin-bottom: 64px; }
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .testimonial-card {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--r-lg); padding: 40px;
+      transition: all 0.25s var(--ease);
+    }
+    .testimonial-card:hover {
+      box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+      transform: translateY(-4px);
+    }
+    .testimonial-stars {
+      display: flex; gap: 3px; margin-bottom: 20px;
+    }
+    .testimonial-stars span { color: var(--gold); font-size: 16px; }
+    .testimonial-card blockquote {
+      font-size: 16px; line-height: 1.7; color: var(--text-2);
+      font-style: italic; margin-bottom: 28px;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .testimonial-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px;
+      color: var(--white); flex-shrink: 0;
+    }
+    .testimonial-name { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 15px; }
+    .testimonial-role { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .testimonial-service {
+      font-size: 11px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent);
+      background: rgba(255,72,32,0.06); border: 1px solid rgba(255,72,32,0.12);
+      padding: 3px 8px; border-radius: 4px; display: inline-block; margin-top: 12px;
+    }
+
+    /* ─── TEAM ────────────────────────────────────────────── */
+    .team { padding: 120px 0; }
+    .team-header { margin-bottom: 64px; }
+    .team-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .team-card {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--r-lg); overflow: hidden;
+      transition: all 0.25s var(--ease);
+    }
+    .team-card:hover {
+      box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+      transform: translateY(-4px);
+    }
+    .team-card-photo {
+      height: 280px;
+      background: linear-gradient(135deg, var(--ink) 0%, var(--ink-3) 100%);
+      position: relative; overflow: hidden;
+      display: flex; align-items: flex-end; justify-content: flex-start;
+      padding: 24px;
+    }
+    .team-card-photo-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(255,72,32,0.15) 0%, transparent 60%);
+    }
+    .team-initials {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 80px;
+      color: rgba(255,255,255,0.06); position: absolute; right: 16px; top: 16px;
+      line-height: 1; letter-spacing: -4px; pointer-events: none;
+    }
+    .team-role-badge {
+      position: relative; z-index: 1;
+      background: rgba(255,72,32,0.90); color: var(--white);
+      font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 5px 10px; border-radius: 4px;
+    }
+    .team-card-body { padding: 28px 32px 32px; }
+    .team-card-body h3 { font-size: 20px; margin-bottom: 6px; }
+    .team-card-body .role { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 14px; }
+    .team-card-body p { font-size: 14px; line-height: 1.65; color: var(--muted); }
+
+    /* ─── PRICING ─────────────────────────────────────────── */
+    .pricing { padding: 120px 0; background: var(--ink); }
+    .pricing-header { color: var(--white); margin-bottom: 16px; }
+    .pricing-header .section-title { color: var(--white); }
+    .pricing-header .section-sub { color: rgba(255,255,255,0.50); }
+    .pricing-toggle {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 64px; margin-top: 32px;
+    }
+    .toggle-label { font-size: 14px; color: rgba(255,255,255,0.60); }
+    .toggle-switch {
+      width: 52px; height: 28px; background: rgba(255,255,255,0.15);
+      border-radius: 100px; position: relative; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .toggle-switch.active { background: var(--accent); }
+    .toggle-switch::after {
+      content: ''; position: absolute;
+      width: 22px; height: 22px; border-radius: 50%; background: var(--white);
+      top: 3px; left: 3px;
+      transition: transform 0.25s var(--ease);
+    }
+    .toggle-switch.active::after { transform: translateX(24px); }
+    .toggle-save {
+      font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 600;
+      background: var(--green); color: var(--white);
+      padding: 3px 8px; border-radius: 4px;
+    }
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+      background: var(--line-dark); border-radius: var(--r-lg); overflow: hidden;
+    }
+    .pricing-card {
+      background: var(--ink-2); padding: 48px 40px;
+      position: relative;
+    }
+    .pricing-card.featured { background: var(--ink-3); }
+    .featured-badge {
+      position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+      background: var(--accent); color: var(--white);
+      font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 6px 14px; border-radius: 0 0 8px 8px;
+    }
+    .pricing-card h3 {
+      font-size: 20px; color: var(--white); margin-bottom: 8px; margin-top: 16px;
+    }
+    .pricing-card .pricing-desc { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 32px; }
+    .pricing-price {
+      display: flex; align-items: baseline; gap: 4px; margin-bottom: 8px;
+    }
+    .price-amount {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 52px;
+      color: var(--white); line-height: 1; transition: all 0.3s;
+    }
+    .price-period { font-size: 14px; color: rgba(255,255,255,0.45); }
+    .price-annual { font-size: 13px; color: var(--green); margin-bottom: 32px; min-height: 20px; }
+    .pricing-divider { height: 1px; background: var(--line-dark); margin: 32px 0; }
+    .pricing-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: rgba(255,255,255,0.70); margin-bottom: 14px;
+    }
+    .pricing-features li::before {
+      content: '✓'; color: var(--accent); font-weight: 700;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .pricing-card .btn { width: 100%; justify-content: center; margin-top: 32px; }
+
+    /* ─── CERTIFICATIONS ──────────────────────────────────── */
+    .certifications { padding: 80px 0; background: var(--surface-2); border-top: 1px solid var(--line); }
+    .cert-header { text-align: center; margin-bottom: 48px; }
+    .cert-header p { font-size: 14px; color: var(--muted); }
+    .cert-logos {
+      display: flex; align-items: center; justify-content: center;
+      gap: 48px; flex-wrap: wrap;
+    }
+    .cert-badge {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 600;
+      color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .cert-badge-icon {
+      width: 56px; height: 56px; border-radius: var(--r-md);
+      background: var(--white); border: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+    }
+
+    /* ─── RESOURCES ───────────────────────────────────────── */
+    .resources { padding: 120px 0; }
+    .resources-header { margin-bottom: 64px; }
+    .resources-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .resource-card {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--r-lg); overflow: hidden;
+      transition: all 0.25s var(--ease);
+    }
+    .resource-card:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.10); transform: translateY(-3px); }
+    .resource-card-top {
+      height: 160px; padding: 28px;
+      display: flex; align-items: flex-end;
+    }
+    .resource-card-top.orange { background: linear-gradient(135deg, #FF4820, #FF8050); }
+    .resource-card-top.blue { background: linear-gradient(135deg, #1A56DB, #3B82F6); }
+    .resource-card-top.dark { background: linear-gradient(135deg, #0A0D18, #1E2438); }
+    .resource-tag {
+      font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.80);
+      background: rgba(0,0,0,0.20); padding: 4px 10px; border-radius: 4px;
+    }
+    .resource-card-body { padding: 28px 28px 32px; }
+    .resource-card-body h3 { font-size: 18px; margin-bottom: 10px; line-height: 1.3; }
+    .resource-card-body p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+    .resource-link {
+      font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 600;
+      color: var(--accent); display: inline-flex; align-items: center; gap: 6px;
+      transition: gap 0.2s;
+    }
+    .resource-link:hover { gap: 10px; }
+
+    /* ─── CONTACT ─────────────────────────────────────────── */
+    .contact { padding: 120px 0; background: var(--ink); }
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    }
+    .contact-left { color: var(--white); }
+    .contact-left .section-label { color: rgba(255,72,32,0.8); }
+    .contact-left .section-title { color: var(--white); margin-bottom: 24px; }
+    .contact-left p { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 40px; }
+    .contact-details { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-detail-icon {
+      width: 40px; height: 40px; border-radius: var(--r-sm);
+      background: rgba(255,72,32,0.10); border: 1px solid rgba(255,72,32,0.20);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .contact-detail-text strong { display: block; font-family: 'Syne', sans-serif; font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 500; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .contact-detail-text a, .contact-detail-text span { font-size: 15px; color: rgba(255,255,255,0.80); }
+    .contact-detail-text a:hover { color: var(--accent); }
+    .social-links { display: flex; gap: 12px; }
+    .social-link {
+      width: 40px; height: 40px; border-radius: var(--r-sm);
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; transition: all 0.2s;
+    }
+    .social-link:hover { background: var(--accent); border-color: var(--accent); }
+    .contact-form-wrapper {
+      background: var(--ink-2); border: 1px solid var(--line-dark);
+      border-radius: var(--r-xl); padding: 48px;
+    }
+    .contact-form-wrapper h3 {
+      font-size: 22px; color: var(--white); margin-bottom: 8px;
+    }
+    .contact-form-wrapper > p { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 32px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-size: 13px; font-family: 'Syne', sans-serif;
+      font-weight: 600; color: rgba(255,255,255,0.55);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 14px 16px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--r-sm); color: var(--white);
+      font-family: 'DM Sans', sans-serif; font-size: 15px;
+      transition: border-color 0.2s, background 0.2s;
+      outline: none; appearance: none;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--accent); background: rgba(255,72,32,0.04);
+    }
+    .form-group select option { background: var(--ink-2); color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-note { font-size: 12px; color: rgba(255,255,255,0.30); margin-top: 12px; }
+    .form-group:last-of-type { margin-bottom: 0; }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    .footer { background: #060810; padding: 64px 0 32px; }
+    .footer-inner {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+      margin-bottom: 56px;
+    }
+    .footer-brand .nav-logo { font-size: 20px; display: block; margin-bottom: 14px; }
+    .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.40); line-height: 1.7; max-width: 280px; margin-bottom: 24px; }
+    .footer-col h4 {
+      font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.40); margin-bottom: 20px;
+    }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      font-size: 14px; color: rgba(255,255,255,0.60);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 24px; display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.30); }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { font-size: 13px; color: rgba(255,255,255,0.30); transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.70); }
+
+    /* ─── ANIMATIONS ──────────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.10s; }
+    .reveal-delay-2 { transition-delay: 0.20s; }
+    .reveal-delay-3 { transition-delay: 0.30s; }
+    .reveal-delay-4 { transition-delay: 0.40s; }
+
+    /* ─── MOBILE ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .services-header { grid-template-columns: 1fr; gap: 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .solutions-grid { grid-template-columns: repeat(3, 1fr); }
+      .markets-grid { grid-template-columns: repeat(2, 1fr); }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+      .number-item { padding: 40px 24px; border-bottom: 1px solid rgba(255,255,255,0.10); }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; gap: 2px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-content { padding: 120px 24px 60px; }
+      .hero-stats { flex-direction: column; gap: 24px; padding: 32px 24px; }
+      .hero-stat { border-right: none; border-bottom: 1px solid var(--line-dark); padding: 0 0 24px; }
+      .hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
+      .solutions-grid { grid-template-columns: 1fr 1fr; }
+      .markets-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .resources-grid { grid-template-columns: 1fr; }
+      .cert-logos { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ NAV ════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Moxi<span>.</span></a>
+    <div class="nav-links">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#solutions" class="nav-link">Solutions</a>
+      <a href="#markets" class="nav-link">Markets</a>
+      <a href="#team" class="nav-link">About</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#resources" class="nav-link">Resources</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-ghost" style="padding:9px 18px;font-size:14px;">Contact Us</a>
+      <a href="#contact" class="btn btn-primary" style="padding:9px 18px;font-size:14px;">
+        Schedule a Call
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════ HERO ════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">HubSpot Certified Partner &amp; B2B Growth Agency</div>
+      <h1>The Partner That Turns Your Pipeline Into <em>Revenue</em></h1>
+      <p class="hero-sub">We combine HubSpot CRM expertise with data-driven marketing to help B2B companies build structured revenue systems—and scale without the guesswork.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary" style="padding:16px 32px;font-size:16px;">
+          Schedule a Free Call
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="#solutions" class="btn btn-ghost" style="padding:16px 32px;font-size:16px;">Explore Our Solutions</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="5"><span>5</span><span style="color:var(--accent)">+</span></span>
+      <span class="hero-stat-label">Years of Experience</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="30"><span>30</span><span style="color:var(--accent)">+</span></span>
+      <span class="hero-stat-label">Companies Helped</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="20"><span>20</span><span style="color:var(--accent)">+</span></span>
+      <span class="hero-stat-label">Services Offered</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="50"><span>50</span><span style="color:var(--accent)">+</span></span>
+      <span class="hero-stat-label">Certification Trainings</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ TICKER ══════════════════════════════════ -->
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <div class="ticker-item">HubSpot</div>
+    <div class="ticker-item">LinkedIn Ads</div>
+    <div class="ticker-item">Apollo.io</div>
+    <div class="ticker-item">Instantly</div>
+    <div class="ticker-item">Metricool</div>
+    <div class="ticker-item">ChatGPT</div>
+    <div class="ticker-item">Canva</div>
+    <div class="ticker-item">RevOps</div>
+    <div class="ticker-item">HubSpot</div>
+    <div class="ticker-item">LinkedIn Ads</div>
+    <div class="ticker-item">Apollo.io</div>
+    <div class="ticker-item">Instantly</div>
+    <div class="ticker-item">Metricool</div>
+    <div class="ticker-item">ChatGPT</div>
+    <div class="ticker-item">Canva</div>
+    <div class="ticker-item">RevOps</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ SERVICES ════════════════════════════════ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Full-Stack B2B<br>Marketing Services</h2>
+      </div>
+      <div>
+        <p class="section-sub">From generating your first qualified lead to building a scalable revenue engine—we handle the entire growth stack so you can focus on closing.</p>
+        <a href="#solutions" class="btn btn-dark" style="margin-top:24px;">
+          See All Solutions
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">📤</div>
+        <h3>Outbound Marketing</h3>
+        <p>Precision cold outreach via email sequences and LinkedIn campaigns that land in inboxes—not spam folders. We use Apollo and Instantly to build targeted prospect lists and automate multi-touch sequences that get replies.</p>
+        <a href="#contact" class="service-link">Start a campaign →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">🧲</div>
+        <h3>Inbound Marketing</h3>
+        <p>Turn your online presence into a lead-generation machine. We create SEO-driven content, optimize landing pages, run paid social campaigns, and build conversion funnels that attract and nurture high-intent buyers.</p>
+        <a href="#contact" class="service-link">Attract better leads →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">⚙️</div>
+        <h3>HubSpot CRM &amp; RevOps</h3>
+        <p>We implement, configure, and optimize HubSpot from the ground up—pipelines, automations, integrations, and reporting dashboards. Stop losing deals to manual processes and start running a modern revenue operation.</p>
+        <a href="#contact" class="service-link">Build your CRM →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ SOLUTIONS ═══════════════════════════════ -->
+<section class="solutions" id="solutions">
+  <div class="container-wide">
+    <div class="solutions-header">
+      <span class="section-label">Five Lines of Service</span>
+      <h2 class="section-title">Everything You Need to<br>Scale Your B2B Revenue</h2>
+      <p class="section-sub" style="margin-top:16px;">From platform setup to demand generation — each practice is built to work independently or as a unified growth system.</p>
+    </div>
+    <div class="solutions-grid">
+      <div class="solution-item reveal">
+        <span class="solution-num">01 — Platform</span>
+        <h3>CRM Setup &amp; Optimization</h3>
+        <p>Full HubSpot CRM implementation, pipeline design, deal stages, property configuration, and ongoing portal health checks.</p>
+      </div>
+      <div class="solution-item reveal reveal-delay-1">
+        <span class="solution-num">02 — Technical</span>
+        <h3>Integrations &amp; Automation</h3>
+        <p>Connect HubSpot to your stack—Slack, Salesforce, Zapier, billing tools, and custom APIs. Build workflows that eliminate manual work.</p>
+      </div>
+      <div class="solution-item reveal reveal-delay-2">
+        <span class="solution-num">03 — Enablement</span>
+        <h3>Training &amp; Support</h3>
+        <p>HubSpot onboarding, team training sessions, SOPs, and ongoing support so your team actually uses the tools you've paid for.</p>
+      </div>
+      <div class="solution-item reveal reveal-delay-3">
+        <span class="solution-num">04 — Digital</span>
+        <h3>Landing Pages &amp; Content</h3>
+        <p>High-converting landing pages, email nurture sequences, case studies, and content strategy that drives organic and paid traffic.</p>
+      </div>
+      <div class="solution-item reveal reveal-delay-4">
+        <span class="solution-num">05 — Growth</span>
+        <h3>Outbound &amp; Demand Gen</h3>
+        <p>AI-powered prospecting, cold email, LinkedIn outreach, paid ads, and ABM campaigns—coordinated to fill your pipeline consistently.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ NUMBERS ══════════════════════════════════ -->
+<section class="numbers">
+  <div class="container">
+    <div class="numbers-grid">
+      <div class="number-item">
+        <span class="number-val" data-target="30">0</span>
+        <div class="number-label">Companies Helped</div>
+      </div>
+      <div class="number-item">
+        <span class="number-val" data-target="5">0</span>
+        <div class="number-label">Years of Experience</div>
+      </div>
+      <div class="number-item">
+        <span class="number-val" data-target="20">0</span>
+        <div class="number-label">Services Offered</div>
+      </div>
+      <div class="number-item">
+        <span class="number-val" data-target="50">0</span>
+        <div class="number-label">Certifications Earned</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ MARKETS ══════════════════════════════════ -->
+<section class="markets" id="markets">
+  <div class="container">
+    <div class="markets-header">
+      <span class="section-label">Industries We Serve</span>
+      <h2 class="section-title">Specialists in B2B Growth<br>Across Key Markets</h2>
+    </div>
+    <div class="markets-grid">
+      <div class="market-card reveal">
+        <div class="market-icon">💻</div>
+        <div>
+          <h3>SaaS &amp; Technology</h3>
+          <p>Demand gen and CRM systems for software companies scaling from seed to Series B.</p>
+        </div>
+      </div>
+      <div class="market-card reveal reveal-delay-1">
+        <div class="market-icon">🏢</div>
+        <div>
+          <h3>Professional Services</h3>
+          <p>Consultancies, agencies, and firms that need a systematic approach to pipeline development.</p>
+        </div>
+      </div>
+      <div class="market-card reveal reveal-delay-2">
+        <div class="market-icon">🏭</div>
+        <div>
+          <h3>B2B Manufacturing</h3>
+          <p>Bringing modern inbound and CRM practices to industrial and manufacturing businesses.</p>
+        </div>
+      </div>
+      <div class="market-card reveal reveal-delay-3">
+        <div class="market-icon">🏥</div>
+        <div>
+          <h3>Healthcare &amp; Wellness</h3>
+          <p>HIPAA-aware marketing strategies that grow patient acquisition and referral pipelines.</p>
+        </div>
+      </div>
+      <div class="market-card reveal reveal-delay-4">
+        <div class="market-icon">🏠</div>
+        <div>
+          <h3>Real Estate</h3>
+          <p>Lead generation, CRM automation, and nurture flows for residential and commercial firms.</p>
+        </div>
+      </div>
+      <div class="market-card reveal reveal-delay-1">
+        <div class="market-icon">🚀</div>
+        <div>
+          <h3>Startups</h3>
+          <p>Early-stage go-to-market execution for founders who need traction fast and a system that scales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ TESTIMONIALS ════════════════════════════ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <span class="section-label">Client Results</span>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-sub" style="margin-top:14px;">Real feedback from companies we've helped build and grow their revenue operations.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote>"Moximize completely transformed how we approach outbound. Within 60 days we had a fully running cold email system booking 8–12 qualified meetings per month. Game-changer for our team."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RD</div>
+          <div>
+            <div class="testimonial-name">Rafael D.</div>
+            <div class="testimonial-role">Head of Sales, SaaS Platform</div>
+          </div>
+        </div>
+        <span class="testimonial-service">Outbound Marketing</span>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote>"Jerson and the team built our entire HubSpot instance from scratch. Pipelines, automations, reporting — everything is clean and actually useful now. I wish we had done this two years ago."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ML</div>
+          <div>
+            <div class="testimonial-name">Maria L.</div>
+            <div class="testimonial-role">CEO, Professional Services Firm</div>
+          </div>
+        </div>
+        <span class="testimonial-service">HubSpot CRM Implementation</span>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <blockquote>"The inbound strategy they developed brought us a 3x increase in organic leads over 4 months. The content they create is genuinely strategic, not just filler. Highly recommend for any B2B brand."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">KP</div>
+          <div>
+            <div class="testimonial-name">Kevin P.</div>
+            <div class="testimonial-role">Founder, Tech Consultancy</div>
+          </div>
+        </div>
+        <span class="testimonial-service">Inbound Marketing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ TEAM ════════════════════════════════════ -->
+<section class="team" id="team">
+  <div class="container">
+    <div class="team-header">
+      <span class="section-label">The Team</span>
+      <h2 class="section-title">Led by Specialists,<br>Not Generalists</h2>
+      <p class="section-sub" style="margin-top:14px;">Our leadership team brings deep expertise in HubSpot, revenue operations, and B2B marketing—so you always work with people who know their craft.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-card-photo">
+          <div class="team-card-photo-bg"></div>
+          <div class="team-initials">SNG</div>
+          <span class="team-role-badge">Founder & CEO</span>
+        </div>
+        <div class="team-card-body">
+          <h3>Steven Nichol Guiao</h3>
+          <div class="role">Founder &amp; Chief Executive Officer</div>
+          <p>Built Moximize on a foundation of innovation, collaboration, and measurable outcomes. Brings deep expertise in digital marketing strategy and HubSpot CRM implementation, leading every engagement with a results-first mindset.</p>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-card-photo">
+          <div class="team-card-photo-bg"></div>
+          <div class="team-initials">KM</div>
+          <span class="team-role-badge">CFO</span>
+        </div>
+        <div class="team-card-body">
+          <h3>Krisha Manalo</h3>
+          <div class="role">Chief Financial Officer</div>
+          <p>Drives the financial health and strategic growth of the business, balancing operational efficiency with investment in innovation. Ensures every client engagement is backed by a sustainable, value-delivering structure.</p>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-card-photo">
+          <div class="team-card-photo-bg"></div>
+          <div class="team-initials">JC</div>
+          <span class="team-role-badge">CRO</span>
+        </div>
+        <div class="team-card-body">
+          <h3>Jerson Chavez</h3>
+          <div class="role">Chief Revenue Officer</div>
+          <p>Specializes in HubSpot and revenue operations, helping companies build structured, scalable revenue systems through automation and data-driven insights. The architect behind our clients' most impactful CRM transformations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ PRICING ══════════════════════════════════ -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-header">
+      <span class="section-label" style="color:rgba(255,72,32,0.8)">Transparent Pricing</span>
+      <h2 class="section-title">Simple, Predictable Plans</h2>
+      <p class="section-sub">No hidden fees. No lock-in surprises. Choose the engagement level that fits your growth stage and budget.</p>
+    </div>
+    <div class="pricing-toggle" id="pricingToggle">
+      <span class="toggle-label">Monthly</span>
+      <div class="toggle-switch" id="toggleSwitch"></div>
+      <span class="toggle-label">Annual</span>
+      <span class="toggle-save">Save up to 12%</span>
+    </div>
+    <div class="pricing-grid">
+      <!-- Basic -->
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <p class="pricing-desc">For early-stage companies building their first growth system.</p>
+        <div class="pricing-price">
+          <span class="price-amount" data-monthly="1,200" data-annual="1,000">$1,200</span>
+        </div>
+        <div class="price-period">/month</div>
+        <div class="price-annual" id="annual-basic"></div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>HubSpot CRM setup &amp; configuration</li>
+          <li>1 outbound or inbound campaign</li>
+          <li>Monthly performance reporting</li>
+          <li>Email support (48h response)</li>
+          <li>Up to 500 contacts managed</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Get Started</a>
+      </div>
+      <!-- Growth -->
+      <div class="pricing-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <h3>Growth</h3>
+        <p class="pricing-desc">For scaling companies ready to build a full revenue engine.</p>
+        <div class="pricing-price">
+          <span class="price-amount" data-monthly="2,000" data-annual="1,800">$2,000</span>
+        </div>
+        <div class="price-period">/month</div>
+        <div class="price-annual" id="annual-growth"></div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Everything in Basic</li>
+          <li>Full HubSpot RevOps build-out</li>
+          <li>2 active marketing campaigns</li>
+          <li>LinkedIn + email outbound sequences</li>
+          <li>Bi-weekly strategy calls</li>
+          <li>Up to 2,000 contacts managed</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+      </div>
+      <!-- Premium -->
+      <div class="pricing-card">
+        <h3>Premium</h3>
+        <p class="pricing-desc">For established teams that need comprehensive, hands-on support.</p>
+        <div class="pricing-price">
+          <span class="price-amount" data-monthly="2,800" data-annual="2,500">$2,800</span>
+        </div>
+        <div class="price-period">/month</div>
+        <div class="price-annual" id="annual-premium"></div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Everything in Growth</li>
+          <li>Custom HubSpot integrations</li>
+          <li>Unlimited active campaigns</li>
+          <li>Full content &amp; SEO management</li>
+          <li>Weekly strategy &amp; review calls</li>
+          <li>Unlimited contacts</li>
+          <li>Priority support (4h response)</li>
+          <li>Quarterly business reviews</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Get Started</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:32px;font-size:14px;color:rgba(255,255,255,0.30);">All plans include a free 30-minute discovery call. Cancel anytime after the first 90 days.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ CERTIFICATIONS ══════════════════════════ -->
+<section class="certifications">
+  <div class="container">
+    <div class="cert-header">
+      <p>Certified across the platforms and disciplines that drive B2B growth</p>
+    </div>
+    <div class="cert-logos">
+      <div class="cert-badge">
+        <div class="cert-badge-icon">🏆</div>
+        HubSpot Certified
+      </div>
+      <div class="cert-badge">
+        <div class="cert-badge-icon">📊</div>
+        HubSpot Marketing
+      </div>
+      <div class="cert-badge">
+        <div class="cert-badge-icon">🔗</div>
+        HubSpot Sales
+      </div>
+      <div class="cert-badge">
+        <div class="cert-badge-icon">⚙️</div>
+        HubSpot RevOps
+      </div>
+      <div class="cert-badge">
+        <div class="cert-badge-icon">📧</div>
+        Email Marketing
+      </div>
+      <div class="cert-badge">
+        <div class="cert-badge-icon">🎯</div>
+        Content Marketing
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ RESOURCES ════════════════════════════════ -->
+<section class="resources" id="resources">
+  <div class="container">
+    <div class="resources-header">
+      <span class="section-label">Resources</span>
+      <h2 class="section-title">Insights for B2B<br>Revenue Leaders</h2>
+    </div>
+    <div class="resources-grid">
+      <div class="resource-card reveal">
+        <div class="resource-card-top orange">
+          <span class="resource-tag">Guide</span>
+        </div>
+        <div class="resource-card-body">
+          <h3>The Complete HubSpot CRM Setup Checklist for B2B Teams</h3>
+          <p>A step-by-step framework for implementing HubSpot the right way — from pipeline design to automation workflows — so your team actually adopts it.</p>
+          <a href="#contact" class="resource-link">Read the guide →</a>
+        </div>
+      </div>
+      <div class="resource-card reveal reveal-delay-1">
+        <div class="resource-card-top blue">
+          <span class="resource-tag">Playbook</span>
+        </div>
+        <div class="resource-card-body">
+          <h3>Cold Email That Books Meetings: Our 3-Step Outbound System</h3>
+          <p>The exact framework we use to build cold email campaigns that achieve 40%+ open rates — including lead sourcing, copywriting, and follow-up sequencing.</p>
+          <a href="#contact" class="resource-link">Get the playbook →</a>
+        </div>
+      </div>
+      <div class="resource-card reveal reveal-delay-2">
+        <div class="resource-card-top dark">
+          <span class="resource-tag">Template</span>
+        </div>
+        <div class="resource-card-body">
+          <h3>B2B Marketing ROI Dashboard: Track What Actually Matters</h3>
+          <p>A ready-to-use HubSpot reporting template that surfaces the metrics leadership cares about — pipeline created, cost per lead, and revenue attribution.</p>
+          <a href="#contact" class="resource-link">Download template →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ CONTACT ══════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Let's Build Your<br>Revenue System</h2>
+        <p>Whether you're starting from scratch or optimizing what you have — we'd love to understand your goals. Reach out and we'll respond within 24 hours.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📧</div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              <a href="mailto:Stevenguiao@moximize.net">Stevenguiao@moximize.net</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <div class="contact-detail-text">
+              <strong>Phone</strong>
+              <a href="tel:+18633407702">+1 (863) 340-7702</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <strong>Location</strong>
+              <span>Westfield Residences, Balanga City,<br>Bataan, Philippines</span>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://linkedin.com/company/moximize" target="_blank" rel="noopener" class="social-link" title="LinkedIn">in</a>
+          <a href="https://facebook.com/moximizeco" target="_blank" rel="noopener" class="social-link" title="Facebook">f</a>
+          <a href="https://instagram.com/moximize.co" target="_blank" rel="noopener" class="social-link" title="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="contact-form-wrapper">
+        <h3>Book a Free Discovery Call</h3>
+        <p>Tell us about your business and goals. We'll come prepared.</p>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Work Email</label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Your Company Name" />
+          </div>
+          <div class="form-group">
+            <label for="service">Service Interest</label>
+            <select id="service" name="service">
+              <option value="" disabled selected>Select a service</option>
+              <option>HubSpot CRM Implementation</option>
+              <option>Outbound Marketing</option>
+              <option>Inbound Marketing</option>
+              <option>Full-Stack Growth (All Services)</option>
+              <option>Not sure yet — let's talk</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">What's your biggest marketing challenge right now?</label>
+            <textarea id="message" name="message" placeholder="We're struggling to generate consistent B2B leads..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;">
+            Schedule My Free Call
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+          <p class="form-note">We respond within 24 hours. No spam, no pushy sales calls.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ FOOTER ═══════════════════════════════════ -->
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">Moxi<span>.</span></a>
+        <p>A HubSpot-certified B2B growth agency helping companies build scalable revenue systems through smart marketing and CRM excellence.</p>
+        <div class="social-links">
+          <a href="https://linkedin.com/company/moximize" target="_blank" rel="noopener" class="social-link" title="LinkedIn">in</a>
+          <a href="https://facebook.com/moximizeco" target="_blank" rel="noopener" class="social-link" title="Facebook">f</a>
+          <a href="https://instagram.com/moximize.co" target="_blank" rel="noopener" class="social-link" title="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Outbound Marketing</a></li>
+          <li><a href="#services">Inbound Marketing</a></li>
+          <li><a href="#services">HubSpot CRM</a></li>
+          <li><a href="#solutions">RevOps</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#solutions">Platform Solutions</a></li>
+          <li><a href="#solutions">Technical Solutions</a></li>
+          <li><a href="#solutions">Enablement</a></li>
+          <li><a href="#solutions">Growth Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#team">Meet the Team</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Moximize. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Master Services Agreement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════ SCRIPTS ══════════════════════════════════ -->
+<script>
+  /* NAV scroll effect */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* Reveal on scroll */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* Animated counters */
+  function animateCount(el, target, duration = 1600) {
+    let start = null;
+    const step = (ts) => {
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target) + '+';
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  const numberEls = document.querySelectorAll('.number-val[data-target]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCount(e.target, parseInt(e.target.dataset.target));
+        counterObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  numberEls.forEach(el => counterObserver.observe(el));
+
+  /* Pricing toggle */
+  const toggleSwitch = document.getElementById('toggleSwitch');
+  const priceAmounts = document.querySelectorAll('.price-amount');
+  const annualBasic = document.getElementById('annual-basic');
+  const annualGrowth = document.getElementById('annual-growth');
+  const annualPremium = document.getElementById('annual-premium');
+  let isAnnual = false;
+
+  toggleSwitch.addEventListener('click', () => {
+    isAnnual = !isAnnual;
+    toggleSwitch.classList.toggle('active', isAnnual);
+    priceAmounts.forEach(el => {
+      el.textContent = '$' + (isAnnual ? el.dataset.annual : el.dataset.monthly);
+    });
+    if (isAnnual) {
+      annualBasic.textContent = 'Billed annually — save $2,400/yr';
+      annualGrowth.textContent = 'Billed annually — save $2,400/yr';
+      annualPremium.textContent = 'Billed annually — save $3,600/yr';
+    } else {
+      annualBasic.textContent = '';
+      annualGrowth.textContent = '';
+      annualPremium.textContent = '';
+    }
+  });
+
+  /* Contact form */
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = '✓ Message Sent — We\'ll be in touch within 24h';
+    btn.style.background = 'var(--green)';
+    btn.disabled = true;
+  });
+</script>
+</body>
+</html>
