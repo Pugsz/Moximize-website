@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
 import { Check } from "lucide-react";
+import { useHubSpotForm } from "@/hooks/useHubSpotForm";
 
 const inside = [
   "How to build a targeted prospect list in under 2 hours",
@@ -15,42 +15,7 @@ const inside = [
 ];
 
 export default function ColdEmailPlaybook() {
-  useEffect(() => {
-    const THANK_YOU = "/thank-you";
-
-    const observer = new MutationObserver(() => {
-      const msg = document.querySelector("#hs-resource-form .submitted-message");
-      if (msg) {
-        observer.disconnect();
-        window.location.href = THANK_YOU;
-      }
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    const script = document.createElement("script");
-    script.src = "//js.hsforms.net/forms/embed/v2.js";
-    script.charset = "utf-8";
-    script.async = true;
-    document.body.appendChild(script);
-    script.onload = () => {
-      (window as any).hbspt?.forms.create({
-        portalId: "46052923",
-        formId: "f99987c0-2f99-4532-948e-68d9ec84eab0",
-        region: "na1",
-        target: "#hs-resource-form",
-        onFormSubmit: () => {
-          setTimeout(() => { window.location.href = THANK_YOU; }, 500);
-        },
-        onFormSubmitted: () => {
-          window.location.href = THANK_YOU;
-        },
-      });
-    };
-    return () => {
-      observer.disconnect();
-      if (document.body.contains(script)) document.body.removeChild(script);
-    };
-  }, []);
+  useHubSpotForm({ target: "#hs-resource-form", redirectUrl: "/thank-you" });
 
   return (
     <div className="min-h-screen bg-[#000000] text-[#e7e9ea]">
@@ -72,7 +37,6 @@ export default function ColdEmailPlaybook() {
               The exact outbound system we run for B2B clients — from building a targeted prospect list to writing emails that actually get replies. No fluff, just the framework.
             </p>
 
-            {/* Preview image */}
             <div className="relative w-full aspect-[16/9] rounded-[16px] overflow-hidden mb-8 border border-[#242628]">
               <Image
                 src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&q=80"
@@ -83,12 +47,8 @@ export default function ColdEmailPlaybook() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#000]/60 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                <span className="bg-[#29ABE2] text-black text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
-                  Free Playbook
-                </span>
-                <span className="text-white text-[12px] font-medium opacity-90">
-                  40%+ open rate system
-                </span>
+                <span className="bg-[#29ABE2] text-black text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Free Playbook</span>
+                <span className="text-white text-[12px] font-medium opacity-90">40%+ open rate system</span>
               </div>
             </div>
 
