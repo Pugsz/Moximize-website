@@ -27,6 +27,9 @@ export default function HubSpotChecklist() {
         formId: "f99987c0-2f99-4532-948e-68d9ec84eab0",
         region: "na1",
         target: "#hs-resource-form",
+        onFormSubmitted: () => {
+          window.location.href = "/thank-you";
+        },
       });
     };
     return () => { if (document.body.contains(script)) document.body.removeChild(script); };
