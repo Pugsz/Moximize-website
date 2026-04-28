@@ -1139,18 +1139,21 @@ const resources = [
     tag: "Guide",
     title: "The Complete HubSpot CRM Setup Checklist for B2B Teams",
     body: "A step-by-step framework for implementing HubSpot the right way — from pipeline design to automation workflows — so your team actually adopts it.",
+    href: "/resources/hubspot-crm-checklist",
   },
   {
     color: "from-[#061622] to-[#0d3b6e]",
     tag: "Playbook",
     title: "Cold Email That Books Meetings: Our 3-Step Outbound System",
     body: "The exact framework we use to build cold email campaigns that achieve 40%+ open rates — including lead sourcing, copywriting, and follow-up sequencing.",
+    href: "/resources/cold-email-playbook",
   },
   {
     color: "from-[#17181c] to-[#29ABE2]/30",
     tag: "Template",
     title: "B2B Marketing ROI Dashboard: Track What Actually Matters",
     body: "A ready-to-use HubSpot reporting template that surfaces the metrics leadership cares about — pipeline created, cost per lead, and revenue attribution.",
+    href: "/resources/b2b-roi-dashboard",
   },
 ];
 
@@ -1170,20 +1173,22 @@ function Resources() {
             <Reveal
               key={r.title}
               delay={i * 0.08}
-              className="group rounded-[20px] border border-[#242628] overflow-hidden bg-[#17181c] hover:shadow-[0_16px_40px_rgba(41,171,226,0.12)] hover:border-mox/30 hover:-translate-y-0.5 transition-all duration-200"
+              className="group rounded-[20px] border border-[#242628] overflow-hidden bg-[#17181c] hover:shadow-[0_16px_40px_rgba(41,171,226,0.12)] hover:border-mox/30 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
             >
-              <div className={cn("h-40 bg-gradient-to-br flex items-end p-7", r.color)}>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-white/80 bg-black/20 px-2.5 py-1 rounded">
-                  {r.tag}
-                </span>
-              </div>
-              <div className="p-7">
-                <h3 className="font-bold text-[18px] mb-2.5 leading-[1.3] text-foreground">{r.title}</h3>
-                <p className="text-[14px] text-muted-foreground leading-[1.6] mb-5">{r.body}</p>
-                <a href={MEETING_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[13px] text-mox inline-flex items-center gap-1.5 group-hover:gap-3 transition-all">
-                  Get the guide →
-                </a>
-              </div>
+              <a href={r.href} className="block h-full">
+                <div className={cn("h-40 bg-gradient-to-br flex items-end p-7", r.color)}>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-white/80 bg-black/20 px-2.5 py-1 rounded">
+                    {r.tag}
+                  </span>
+                </div>
+                <div className="p-7">
+                  <h3 className="font-bold text-[18px] mb-2.5 leading-[1.3] text-foreground">{r.title}</h3>
+                  <p className="text-[14px] text-muted-foreground leading-[1.6] mb-5">{r.body}</p>
+                  <span className="font-semibold text-[13px] text-mox inline-flex items-center gap-1.5 group-hover:gap-3 transition-all">
+                    Get free access →
+                  </span>
+                </div>
+              </a>
             </Reveal>
           ))}
         </div>
