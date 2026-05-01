@@ -17,7 +17,7 @@ const MEETING_URL = "https://moximize.net/meetings/steven-nichol-guiao?uuid=956a
 function Logo({ className }: { className?: string }) {
   return (
     <img
-      src="/logo.png.png"
+      src="/logo.png"
       alt="Moximize"
       className={cn("w-auto object-contain", className)}
       style={{ height: "48px" }}
@@ -594,6 +594,15 @@ const team = [
     linkedin: "https://linkedin.com/company/moximize",
     bio: "Specializes in HubSpot and revenue operations, helping companies build structured, scalable revenue systems through automation and data-driven insights. The architect behind our clients' most impactful CRM transformations.",
   },
+  {
+    photo: "/Katrina Vidal.png",
+    imgStyle: { objectPosition: "50% 10%", transform: "scale(1.12)", transformOrigin: "50% 20%" },
+    name: "Katrina Vidal",
+    role: "Chief Marketing Officer",
+    badge: "CMO",
+    linkedin: "https://linkedin.com/company/moximize",
+    bio: "Leads brand strategy, content, and demand generation across all Moximize channels. Combines creative vision with performance marketing expertise to build campaigns that resonate with B2B buyers and drive measurable pipeline growth.",
+  },
 ];
 
 function Team() {
@@ -610,7 +619,7 @@ function Team() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {team.map((m, i) => (
             <Reveal
               key={m.name}
