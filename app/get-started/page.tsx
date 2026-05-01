@@ -45,7 +45,7 @@ function GetStartedInner() {
       {/* Nav */}
       <div className="max-w-[1100px] mx-auto px-6 py-6 flex items-center justify-between">
         <Link href="/">
-          <img src="/logo.png.png" alt="Moximize" style={{ height: "40px" }} className="w-auto object-contain" />
+          <img src="/logo.png" alt="Moximize" style={{ height: "40px" }} className="w-auto object-contain" />
         </Link>
         <Link href="/plans" className="text-[13px] text-[#72767a] hover:text-[#29ABE2] flex items-center gap-1.5 transition-colors">
           <ArrowLeft className="w-3.5 h-3.5" /> Change plan

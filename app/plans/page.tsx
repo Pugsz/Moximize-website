@@ -89,7 +89,7 @@ export default function PlansPage() {
       {/* Nav */}
       <div className="max-w-[1200px] mx-auto px-6 py-6 flex items-center justify-between">
         <Link href="/">
-          <img src="/logo.png.png" alt="Moximize" style={{ height: "40px" }} className="w-auto object-contain" />
+          <img src="/logo.png" alt="Moximize" style={{ height: "40px" }} className="w-auto object-contain" />
         </Link>
         <a
           href={MEETING_URL}
