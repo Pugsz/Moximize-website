@@ -1205,6 +1205,33 @@ function Certifications() {
 
 /* ── resources ────────────────────────────────────────────────────────────── */
 
+const caseStudyPreviews = [
+  {
+    slug: "b2b-saas-pipeline-growth",
+    tag: "Outbound · AI Lead Gen",
+    title: "B2B SaaS Platform: 0 to 10 Qualified Meetings/Month in 60 Days",
+    result: "+340%",
+    metric: "pipeline growth",
+    industry: "SaaS",
+  },
+  {
+    slug: "hubspot-crm-implementation",
+    tag: "HubSpot · CRM",
+    title: "Professional Services Firm: 95% HubSpot Adoption in 3 Weeks",
+    result: "95%",
+    metric: "CRM adoption rate",
+    industry: "Professional Services",
+  },
+  {
+    slug: "cold-email-outbound",
+    tag: "Cold Email · LinkedIn",
+    title: "FinTech Startup: 15 Demos/Month From Cold Outreach in 6 Weeks",
+    result: "15",
+    metric: "demos booked/month",
+    industry: "FinTech",
+  },
+];
+
 const resources = [
   {
     color: "from-[#2b4ea0] to-[#29ABE2]",
@@ -1263,6 +1290,58 @@ function Resources() {
               </a>
             </Reveal>
           ))}
+        </div>
+
+        {/* ── Case Studies ── */}
+        <div className="mt-20 pt-16 border-t border-[#242628]">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <SectionLabel>Case Studies</SectionLabel>
+              <h3 className="font-bold text-[clamp(26px,3vw,40px)] tracking-[-0.02em] leading-[1.1] text-foreground">
+                Real Results.<br />Real Clients.
+              </h3>
+            </div>
+            <a
+              href="/case-studies"
+              className="hidden md:inline-flex items-center gap-2 font-semibold text-[14px] text-[#29ABE2] border border-[#29ABE2]/30 hover:border-[#29ABE2] hover:bg-[#29ABE2]/10 px-5 py-2.5 rounded-full transition-all"
+            >
+              View all case studies <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {caseStudyPreviews.map((c, i) => (
+              <Reveal key={c.slug} delay={i * 0.08}>
+                <a
+                  href={`/case-studies/${c.slug}`}
+                  className="group flex flex-col h-full rounded-[20px] border border-[#242628] bg-[#17181c] hover:border-[#29ABE2]/40 hover:shadow-[0_16px_40px_rgba(41,171,226,0.10)] hover:-translate-y-0.5 transition-all duration-200 overflow-hidden p-7"
+                >
+                  <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#29ABE2] mb-3 block">
+                    {c.tag}
+                  </span>
+                  <h4 className="font-bold text-[17px] leading-[1.3] text-white mb-4 flex-1 group-hover:text-[#29ABE2] transition-colors">
+                    {c.title}
+                  </h4>
+                  <div className="flex items-center justify-between pt-4 border-t border-[#242628]">
+                    <div>
+                      <p className="text-[24px] font-extrabold text-[#29ABE2] leading-none">{c.result}</p>
+                      <p className="text-[12px] text-[#72767a] mt-1">{c.metric}</p>
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-[#29ABE2] group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mt-6 md:hidden text-center">
+            <a
+              href="/case-studies"
+              className="inline-flex items-center gap-2 font-semibold text-[14px] text-[#29ABE2]"
+            >
+              View all case studies <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -1454,6 +1533,7 @@ function Footer() {
                 { label: "Meet the Team", href: "#team" },
                 { label: "Pricing", href: "#pricing" },
                 { label: "Resources", href: "#resources" },
+                { label: "Case Studies", href: "/case-studies" },
                 { label: "Contact", href: "#contact" },
               ],
             },
