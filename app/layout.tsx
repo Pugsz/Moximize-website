@@ -13,21 +13,20 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://moximize.net"),
   title: "Moximize — HubSpot Partner & AI-Powered B2B Growth Agency",
   description:
-    "Moximize helps B2B companies scale through AI-powered lead generation, HubSpot CRM implementation, and outbound marketing. 30+ companies helped. 5+ years of experience.",
+    "Moximize helps B2B companies build predictable pipeline through AI-powered outbound, HubSpot CRM implementation, and full-funnel revenue operations. 30+ companies. Results in 30 days.",
   keywords: [
     "HubSpot partner", "B2B marketing agency", "CRM implementation",
     "outbound marketing", "AI lead generation", "revenue operations",
-    "HubSpot CRM", "B2B growth agency", "cold email", "LinkedIn outbound",
+    "HubSpot CRM setup", "B2B growth agency", "cold email agency",
+    "LinkedIn outbound", "HubSpot certified partner Philippines",
   ],
   authors: [{ name: "Moximize", url: "https://moximize.net" }],
   creator: "Moximize",
-  alternates: {
-    canonical: "https://moximize.net",
-  },
+  alternates: { canonical: "https://moximize.net" },
   openGraph: {
     title: "Moximize — HubSpot Partner & AI-Powered B2B Growth Agency",
     description:
-      "AI-powered lead generation, HubSpot CRM implementation, and outbound marketing for B2B companies. Book a free discovery call.",
+      "AI-powered outbound, HubSpot CRM, and revenue operations for B2B teams. Measurable pipeline in 90 days — guaranteed.",
     url: "https://moximize.net",
     siteName: "Moximize",
     locale: "en_US",
@@ -37,27 +36,60 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Moximize — HubSpot Partner & AI-Powered B2B Growth Agency",
     description:
-      "AI-powered lead generation, HubSpot CRM, and outbound marketing for B2B companies.",
+      "AI-powered outbound, HubSpot CRM, and revenue ops for B2B teams. 90-day pipeline guarantee.",
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-    },
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Moximize",
+  url: "https://moximize.net",
+  logo: "https://moximize.net/logo.png",
+  description:
+    "AI-powered B2B growth agency specialising in HubSpot CRM implementation, outbound marketing, and revenue operations.",
+  telephone: "+18633407702",
+  email: "Stevenguiao@moximize.net",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Balanga City",
+    addressRegion: "Bataan",
+    addressCountry: "PH",
+  },
+  areaServed: "Worldwide",
+  priceRange: "$$$",
+  sameAs: [
+    "https://linkedin.com/company/moximize",
+    "https://facebook.com/moximizeco",
+    "https://instagram.com/moximize.co",
+  ],
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={openSans.variable}>
-      <body>{children}</body>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+        />
+      </head>
+      <body>
+        {children}
+        {/* HubSpot chat widget */}
+        <script
+          type="text/javascript"
+          id="hs-script-loader"
+          async
+          defer
+          src="//js.hs-scripts.com/46052923.js"
+        />
+      </body>
     </html>
   );
 }

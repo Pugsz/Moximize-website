@@ -57,6 +57,60 @@ export const testimonials = [
     name: "Carlos E.",
     role: "CEO, Healthcare Startup",
   },
+  {
+    text: "We closed 3 enterprise deals in the first quarter after Moximize rebuilt our outbound. The ROI was immediate and obvious.",
+    image: "https://randomuser.me/api/portraits/men/41.jpg",
+    name: "Thomas B.",
+    role: "VP Sales, Enterprise SaaS",
+  },
+  {
+    text: "Finally an agency that speaks RevOps. They connected HubSpot to our billing system and now our forecasting is actually accurate.",
+    image: "https://randomuser.me/api/portraits/women/55.jpg",
+    name: "Lauren W.",
+    role: "Revenue Operations Manager",
+  },
+  {
+    text: "Cold email was dead for us — or so we thought. Moximize brought it back to life with AI personalisation at a scale we couldn't do in-house.",
+    image: "https://randomuser.me/api/portraits/men/63.jpg",
+    name: "Andre M.",
+    role: "Founder, B2B Logistics Tech",
+  },
+  {
+    text: "Within 45 days we had a pipeline dashboard I could actually show the board. No more guessing where deals were coming from.",
+    image: "https://randomuser.me/api/portraits/women/33.jpg",
+    name: "Nina H.",
+    role: "CMO, Growth-Stage Startup",
+  },
+  {
+    text: "The team genuinely cares about your numbers, not just deliverables. Every week we knew exactly what was working and why.",
+    image: "https://randomuser.me/api/portraits/men/27.jpg",
+    name: "Patrick O.",
+    role: "Head of Marketing, SaaS",
+  },
+  {
+    text: "Switched from a bloated in-house stack to Moximize and cut costs by 60% while doubling our meeting volume. No brainer.",
+    image: "https://randomuser.me/api/portraits/women/71.jpg",
+    name: "Yuki T.",
+    role: "COO, Professional Services",
+  },
+  {
+    text: "They set up sequences in Clay + Instantly that our team had been trying to build for months. Done in two weeks, running in four.",
+    image: "https://randomuser.me/api/portraits/men/19.jpg",
+    name: "Ethan G.",
+    role: "Director of Demand Gen",
+  },
+  {
+    text: "Our HubSpot was a graveyard of duplicate contacts and broken workflows. Moximize cleaned it up and made it a system we trust.",
+    image: "https://randomuser.me/api/portraits/women/83.jpg",
+    name: "Rachel P.",
+    role: "VP Operations, Consulting Firm",
+  },
+  {
+    text: "The strategy calls aren't just updates — they're actual working sessions. We leave every call with a clear action list and measurable targets.",
+    image: "https://randomuser.me/api/portraits/men/47.jpg",
+    name: "Marcos F.",
+    role: "CEO, Manufacturing SMB",
+  },
 ];
 
 export const TestimonialsColumn = (props: {

@@ -62,10 +62,11 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 function Counter({ target }: { target: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
-  const [val, setVal] = useState(0);
+  const [val, setVal] = useState<number | null>(null);
 
   useEffect(() => {
     if (!inView) return;
+    setVal(0);
     let start: number | null = null;
     const duration = 1600;
     const step = (ts: number) => {
@@ -80,7 +81,7 @@ function Counter({ target }: { target: number }) {
 
   return (
     <span ref={ref} className="font-extrabold text-[60px] text-white leading-none">
-      {val}+
+      {val === null ? target : val}+
     </span>
   );
 }
@@ -168,12 +169,10 @@ function HeroBottom() {
     <div className="bg-[#030303]">
       <div className="max-w-[1400px] mx-auto px-8 pb-16 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
-          href={MEETING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/get-started"
           className="font-semibold text-[16px] text-white bg-mox hover:bg-mox-h px-8 py-4 rounded-md transition-all flex items-center gap-2 shadow-[0_8px_24px_rgba(41,171,226,0.35)] hover:-translate-y-0.5"
         >
-          Schedule a Free Call <ArrowRight className="w-4 h-4" />
+          Get Started Free <ArrowRight className="w-4 h-4" />
         </a>
         <a
           href="#solutions"
@@ -198,6 +197,42 @@ function HeroBottom() {
             <p className="text-[13px] text-[#72767a] uppercase tracking-[0.08em] mt-1">{s.label}</p>
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+/* ── logo bar ─────────────────────────────────────────────────────────────── */
+
+const toolLogos = [
+  { name: "HubSpot", color: "#ff7a59" },
+  { name: "Apollo.io", color: "#6c5ce7" },
+  { name: "Clay", color: "#29ABE2" },
+  { name: "Instantly", color: "#00b894" },
+  { name: "LinkedIn", color: "#0a66c2" },
+  { name: "Claude AI", color: "#da7756" },
+  { name: "Zapier", color: "#ff4a00" },
+  { name: "ChatGPT", color: "#10a37f" },
+];
+
+function LogoBar() {
+  const doubled = [...toolLogos, ...toolLogos];
+  return (
+    <div className="bg-[#000000] border-b border-[#242628] py-5 overflow-hidden">
+      <p className="text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-[#3a3d42] mb-4">
+        Powered by best-in-class B2B tools
+      </p>
+      <div className="relative">
+        <div className="flex gap-0 w-max animate-scroll-left">
+          {doubled.map((t, i) => (
+            <div key={i} className="flex items-center gap-2 px-10 whitespace-nowrap">
+              <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: t.color }} />
+              <span className="text-[14px] font-bold tracking-tight" style={{ color: t.color }}>
+                {t.name}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -406,12 +441,10 @@ function AIAdvantage() {
               <p className="text-[14px] text-[#72767a] mt-0.5">Most clients see measurable pipeline growth within 45 days.</p>
             </div>
             <a
-              href={MEETING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/get-started"
               className="shrink-0 bg-[#29ABE2] hover:bg-[#1A9DD8] text-white font-semibold text-[14px] px-6 py-3 rounded-xl transition-all flex items-center gap-2 shadow-[0_8px_20px_rgba(41,171,226,0.3)] hover:-translate-y-0.5 whitespace-nowrap"
             >
-              Book Free AI Strategy Call <ArrowRight className="w-4 h-4" />
+              Get Started Free <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </Reveal>
@@ -530,9 +563,9 @@ function Markets() {
 
 /* ── testimonials ─────────────────────────────────────────────────────────── */
 
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
+const firstColumn = testimonials.slice(0, 6);
+const secondColumn = testimonials.slice(6, 12);
+const thirdColumn = testimonials.slice(12, 18);
 
 function Testimonials() {
   return (
@@ -909,6 +942,35 @@ function Pricing() {
           </div>
         </div>
 
+        {/* vs In-House comparison */}
+        <div className="mb-12 overflow-x-auto">
+          <table className="w-full text-[13px] border-collapse">
+            <thead>
+              <tr>
+                <th className="text-left py-3 px-4 text-[#72767a] font-semibold uppercase tracking-[0.08em]" />
+                <th className="py-3 px-4 text-center text-[#72767a] font-semibold uppercase tracking-[0.08em]">In-House Hire</th>
+                <th className="py-3 px-4 text-center bg-[#29ABE2]/10 rounded-t-xl text-[#29ABE2] font-bold uppercase tracking-[0.08em]">Moximize</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Monthly cost", "$8,000–$12,000", "From $1,497"],
+                ["Ramp time", "3–6 months", "Live in 2 weeks"],
+                ["Tools included", "Extra $500–$2K/mo", "All included"],
+                ["HubSpot expertise", "1 generalist", "Certified team"],
+                ["Scalability", "Hire more staff", "Upgrade your plan"],
+                ["Cancel anytime", "Severance + notice", "Month-to-month"],
+              ].map(([label, inhouseVal, moxVal], i) => (
+                <tr key={i} className={cn("border-t border-[#242628]", i % 2 === 0 && "bg-[#17181c]/30")}>
+                  <td className="py-3 px-4 font-medium text-[#d9d9d9]">{label}</td>
+                  <td className="py-3 px-4 text-center text-[#72767a]">{inhouseVal}</td>
+                  <td className="py-3 px-4 text-center bg-[#29ABE2]/5 font-semibold text-[#29ABE2]">{moxVal}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-6 items-start">
           {pricingPlans.map((plan, i) => (
@@ -1054,12 +1116,12 @@ function Pricing() {
                 Our Growth plan replaces a senior marketing manager, a HubSpot admin, and an outbound SDR — fully managed, with no overhead, benefits, or ramp time. Most clients see ROI within the first 90 days.
               </p>
             </div>
-            <button
-              onClick={scrollToContact}
+            <a
+              href="/get-started"
               className="shrink-0 bg-[#29ABE2] hover:bg-[#1A9DD8] text-white font-semibold text-[14px] px-6 py-3 rounded-xl transition-all whitespace-nowrap"
             >
-              Book Free Call
-            </button>
+              Get Started Free
+            </a>
 
           </div>
         </Reveal>
@@ -1071,9 +1133,9 @@ function Pricing() {
               🛡️
             </div>
             <div className="flex-1">
-              <h4 className="font-bold text-[18px] text-white mb-1">Our 90-Day Results Commitment</h4>
+              <h4 className="font-bold text-[18px] text-white mb-1">90-Day Pipeline Guarantee</h4>
               <p className="text-[14px] text-[#72767a] leading-[1.7]">
-                If we don&apos;t deliver measurable pipeline activity within the first 90 days, we continue working at no charge until we do. No fine print. No excuses.
+                Measurable pipeline in 90 days — or we keep working free until you get it. No asterisks. No excuses.
               </p>
             </div>
           </div>
@@ -1444,6 +1506,7 @@ export default function Page() {
         title2="Predictable Revenue"
       />
       <HeroBottom />
+      <LogoBar />
       <Services />
       <AIAdvantage />
       <IntegrationHero ctaHref={MEETING_URL} />
