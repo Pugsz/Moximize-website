@@ -113,23 +113,18 @@ function Nav() {
         </a>
 
         <div className="hidden md:flex items-center flex-1">
-          <SlideTabs tabs={["Services", "Solutions", "Markets", "Team", "Pricing", "Resources"]} />
+          <SlideTabs
+            tabs={["Services", "Case Studies", "Insights", "About"]}
+            hrefs={["#services", "/case-studies", "/insights", "/about"]}
+          />
         </div>
 
         <div className="hidden md:flex items-center gap-3 ml-auto">
           <a
-            href="#contact"
-            className="font-semibold text-[14px] text-[#72767a] px-5 py-2.5 rounded-md border border-[#242628] hover:border-[#29ABE2]/50 hover:text-[#e7e9ea] transition-all"
-          >
-            Contact Us
-          </a>
-          <a
-            href={MEETING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="font-semibold text-[14px] text-white bg-mox hover:bg-mox-h px-5 py-2.5 rounded-md transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(41,171,226,0.30)]"
           >
-            Schedule a Call <ArrowRight className="w-4 h-4" />
+            Book a Call <ArrowRight className="w-4 h-4" />
           </a>
         </div>
 
@@ -148,13 +143,18 @@ function Nav() {
 
       {open && (
         <div className="md:hidden bg-[#000000] border-t border-[#242628] px-6 py-4 flex flex-col gap-3">
-          {["#services", "#solutions", "#markets", "#team", "#pricing", "#resources"].map((href) => (
+          {[
+            { label: "Services", href: "#services" },
+            { label: "Case Studies", href: "/case-studies" },
+            { label: "Insights", href: "/insights" },
+            { label: "About", href: "/about" },
+          ].map(({ label, href }) => (
             <a key={href} href={href} onClick={() => setOpen(false)} className="text-[15px] text-[#72767a] py-2 hover:text-[#e7e9ea]">
-              {href.replace("#", "").charAt(0).toUpperCase() + href.slice(2)}
+              {label}
             </a>
           ))}
-          <a href={MEETING_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="mt-2 font-semibold text-white bg-mox px-5 py-3 rounded-md text-center">
-            Schedule a Call
+          <a href="/contact" onClick={() => setOpen(false)} className="mt-2 font-semibold text-white bg-mox px-5 py-3 rounded-md text-center">
+            Book a Call
           </a>
         </div>
       )}
@@ -169,25 +169,25 @@ function HeroBottom() {
     <div className="bg-[#030303]">
       <div className="max-w-[1400px] mx-auto px-8 pb-16 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
-          href="/get-started"
+          href="/contact"
           className="font-semibold text-[16px] text-white bg-mox hover:bg-mox-h px-8 py-4 rounded-md transition-all flex items-center gap-2 shadow-[0_8px_24px_rgba(41,171,226,0.35)] hover:-translate-y-0.5"
         >
-          Get Started Free <ArrowRight className="w-4 h-4" />
+          Book a 20-min fit call <ArrowRight className="w-4 h-4" />
         </a>
         <a
-          href="#solutions"
+          href="#approach"
           className="font-semibold text-[16px] text-[#72767a] px-8 py-4 rounded-md border border-[#242628] hover:border-[#29ABE2]/50 hover:text-[#e7e9ea] transition-all"
         >
-          Explore Our Solutions
+          See how it works
         </a>
       </div>
 
       <div className="border-t border-[#242628] max-w-[1400px] mx-auto px-8 py-8 grid grid-cols-2 md:grid-cols-4">
         {[
-          { n: 5, label: "Years of Experience" },
-          { n: 30, label: "Companies Helped" },
-          { n: 20, label: "Services Offered" },
-          { n: 50, label: "Certifications Earned" },
+          { n: 12, label: "M+ Pipeline Influenced" },
+          { n: 40, label: "AI Workflows Shipped" },
+          { n: 300, label: "Hours/Month Saved" },
+          { n: 30, label: "B2B Teams Served" },
         ].map((s, i) => (
           <div
             key={s.label}
@@ -266,24 +266,30 @@ function Ticker() {
 const services = [
   {
     icon: "📤",
-    title: "AI-Powered Outbound",
+    title: "AI Pipeline Engine",
     badge: "AI",
-    body: "We use Clay + Apollo AI to build hyper-targeted prospect lists enriched with intent data, then generate personalized first lines for every contact using AI — so your outreach feels hand-written at scale. Expect 3x higher reply rates.",
-    cta: "Start a campaign",
+    price: "From $4,500/mo",
+    body: "Qualified meetings in your calendar every month — guaranteed minimum. We build and run your entire outbound system: ICP research, Clay enrichment, AI-personalized sequences, and inbox management.",
+    cta: "Learn more",
+    href: "/services/ai-pipeline-engine",
   },
   {
-    icon: "🧲",
-    title: "AI Lead Generation",
+    icon: "🤖",
+    title: "HubSpot AI Implementation",
     badge: "AI",
-    body: "Our AI stack identifies your highest-value buyers before they even raise their hand. We combine intent signals, LinkedIn activity, and firmographic data to surface warm leads — then convert them through SEO content, paid ads, and smart funnels.",
-    cta: "Generate more leads",
+    price: "From $7,500 (project)",
+    body: "A production-ready AI system inside your CRM in 30–45 days. AI workflows, lead scoring, enrichment automation, and Breeze AI — all built to your pipeline, not a generic template.",
+    cta: "Learn more",
+    href: "/services/hubspot-ai",
   },
   {
     icon: "⚙️",
-    title: "HubSpot CRM & RevOps",
+    title: "Fractional RevOps + AI",
     badge: "AI",
-    body: "We implement HubSpot with Breeze AI built in — predictive lead scoring, AI-driven workflows, and smart reporting that tells your team exactly where to focus. Stop guessing. Start closing with confidence.",
-    cta: "Build your CRM",
+    price: "From $6,000/mo",
+    body: "Replace a $180k/yr RevOps hire for a fraction of the cost. Ongoing HubSpot management, AI system maintenance, reporting, and revenue operations — run by someone who's built these systems before.",
+    cta: "Learn more",
+    href: "/services/fractional-revops",
   },
 ];
 
@@ -295,18 +301,18 @@ function Services() {
           <div>
             <SectionLabel>What We Do</SectionLabel>
             <h2 className="font-bold text-[clamp(32px,4vw,52px)] tracking-[-0.02em] leading-[1.08] text-foreground">
-              Full-Stack B2B<br />Marketing Services
+              Three Ways to<br />Work With Us
             </h2>
           </div>
           <div>
             <p className="text-[17px] leading-[1.7] text-muted-foreground">
-              From generating your first qualified lead to building a scalable revenue engine — we handle the entire growth stack so you can focus on closing.
+              Every engagement is built around one goal: qualified pipeline. Pick the model that fits where you are right now.
             </p>
             <a
-              href="#solutions"
+              href="/contact"
               className="mt-6 inline-flex items-center gap-2 font-semibold text-[15px] text-foreground bg-[#17181c] hover:bg-[#1e1f24] border border-[#242628] px-6 py-3 rounded-md transition-all"
             >
-              See All Solutions <ArrowRight className="w-4 h-4" />
+              Book a fit call <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </div>
@@ -325,9 +331,10 @@ function Services() {
                     </span>
                   )}
                 </div>
-                <h3 className="font-bold text-[22px] mb-3.5 text-foreground">{s.title}</h3>
+                <h3 className="font-bold text-[22px] mb-1.5 text-foreground">{s.title}</h3>
+                <p className="text-[13px] font-semibold text-mox mb-3.5">{s.price}</p>
                 <p className="text-[15px] leading-[1.65] text-muted-foreground flex-1">{s.body}</p>
-                <a href="#contact" className="mt-6 inline-flex items-center gap-1.5 font-semibold text-[13px] text-mox group-hover:gap-3 transition-all">
+                <a href={s.href} className="mt-6 inline-flex items-center gap-1.5 font-semibold text-[13px] text-mox group-hover:gap-3 transition-all">
                   {s.cta} →
                 </a>
               </div>
@@ -379,7 +386,7 @@ const aiCapabilities = [
 
 function AIAdvantage() {
   return (
-    <section className="py-[120px] bg-[#000000] relative overflow-hidden">
+    <section id="approach" className="py-[120px] bg-[#000000] relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(41,171,226,0.08),transparent_60%)] pointer-events-none" />
 
@@ -441,10 +448,10 @@ function AIAdvantage() {
               <p className="text-[14px] text-[#72767a] mt-0.5">Most clients see measurable pipeline growth within 45 days.</p>
             </div>
             <a
-              href="/get-started"
+              href="/contact"
               className="shrink-0 bg-[#29ABE2] hover:bg-[#1A9DD8] text-white font-semibold text-[14px] px-6 py-3 rounded-xl transition-all flex items-center gap-2 shadow-[0_8px_20px_rgba(41,171,226,0.3)] hover:-translate-y-0.5 whitespace-nowrap"
             >
-              Get Started Free <ArrowRight className="w-4 h-4" />
+              Book a fit call <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </Reveal>
@@ -501,10 +508,10 @@ function Numbers() {
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4">
           {[
-            { n: 30, label: "Companies Helped" },
-            { n: 5, label: "Years of Experience" },
-            { n: 20, label: "Services Offered" },
-            { n: 50, label: "Certifications Earned" },
+            { n: 12, label: "M+ Pipeline Influenced" },
+            { n: 40, label: "AI Workflows Shipped" },
+            { n: 300, label: "Hours/Month Saved" },
+            { n: 30, label: "B2B Teams Served" },
           ].map((s, i) => (
             <div key={s.label} className={cn("text-center py-6 px-8", i < 3 && "border-r border-white/20")}>
               <Counter target={s.n} />
@@ -603,11 +610,11 @@ const team = [
   {
     photo: "/Steven Nichol Guiao.png",
     imgStyle: { objectPosition: "50% 8%", transform: "scale(1.12)", transformOrigin: "50% 22%" },
-    name: "Steven Nichol Guiao",
-    role: "Founder & Chief Executive Officer",
-    badge: "Founder & CEO",
+    name: "Nic Guiao",
+    role: "Founder, Moximize",
+    badge: "Founder",
     linkedin: "https://linkedin.com/company/moximize",
-    bio: "Built Moximize on a foundation of innovation, collaboration, and measurable outcomes. Brings deep expertise in digital marketing strategy and HubSpot CRM implementation, leading every engagement with a results-first mindset.",
+    bio: "Operator-turned-consultant. Built Moximize to deliver the AI-powered HubSpot systems that most B2B teams need but can't build in-house. Every client engagement is founder-led — you work directly with me.",
   },
   {
     photo: "/Krisha Manalo.jpg",
@@ -1044,7 +1051,7 @@ function Pricing() {
                 {/* CTA */}
                 <div className="px-8 pb-6">
                   <a
-                    href={`/get-started?plan=${plan.id}&cycle=${cycle}`}
+                    href="/contact"
                     className={cn(
                       "w-full py-3.5 rounded-xl font-semibold text-[15px] transition-all duration-200 flex items-center justify-center gap-2",
                       plan.isPopular
@@ -1117,10 +1124,10 @@ function Pricing() {
               </p>
             </div>
             <a
-              href="/get-started"
+              href="/contact"
               className="shrink-0 bg-[#29ABE2] hover:bg-[#1A9DD8] text-white font-semibold text-[14px] px-6 py-3 rounded-xl transition-all whitespace-nowrap"
             >
-              Get Started Free
+              Book a fit call
             </a>
 
           </div>
@@ -1362,10 +1369,10 @@ function Contact() {
           <div>
             <SectionLabel>Get In Touch</SectionLabel>
             <h2 className="font-bold text-[clamp(32px,4vw,52px)] tracking-[-0.02em] leading-[1.08] text-foreground mb-6">
-              Let&apos;s Build Your<br />Revenue System
+              Ready to build your<br />AI-powered growth system?
             </h2>
             <p className="text-[16px] leading-[1.7] text-muted-foreground mb-10">
-              Whether you&apos;re starting from scratch or optimizing what you have — we&apos;d love to understand your goals. Reach out and we&apos;ll respond within 24 hours.
+              We&apos;ll look at your HubSpot setup, understand your goals, and tell you honestly whether Moximize is the right fit. No pitch — just a straight conversation.
             </p>
 
             <div className="flex flex-col gap-5 mb-10">
@@ -1418,9 +1425,9 @@ function Contact() {
               <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-mox mb-4">What happens next</p>
               <ul className="space-y-3">
                 {[
-                  "We review your submission within 24 hours",
-                  "You get a calendar invite for a 30-min strategy call",
-                  "We come prepared with ideas specific to your business",
+                  "We'll look at your current HubSpot setup and pipeline",
+                  "Tell you honestly whether Moximize is a fit",
+                  "If we're not the right fit, we'll point you toward who is",
                 ].map((step, i) => (
                   <li key={i} className="flex items-start gap-3 text-[14px] text-muted-foreground">
                     <span className="w-5 h-5 rounded-full bg-mox/10 border border-mox/20 text-mox text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">
@@ -1449,14 +1456,14 @@ function Contact() {
                     M
                   </div>
                   <div>
-                    <h3 className="font-bold text-[20px] text-foreground leading-tight">Book a Free Discovery Call</h3>
-                    <p className="text-[13px] text-muted-foreground mt-0.5">30 minutes. No pressure. Real strategy.</p>
+                    <h3 className="font-bold text-[20px] text-foreground leading-tight">Book a 20-min fit call</h3>
+                    <p className="text-[13px] text-muted-foreground mt-0.5">20 minutes. No pitch. Straight talk.</p>
                   </div>
                 </div>
 
                 {/* Trust chips */}
                 <div className="flex flex-wrap gap-2 mb-8">
-                  {["✓ Free 30-min call", "✓ No commitment", "✓ Reply within 24h"].map((t) => (
+                  {["✓ Free 20-min call", "✓ No commitment", "✓ Honest fit assessment"].map((t) => (
                     <span key={t} className="text-[12px] font-semibold text-[#29ABE2] bg-[#29ABE2]/[0.07] border border-[#29ABE2]/20 rounded-full px-3 py-1">
                       {t}
                     </span>
@@ -1487,7 +1494,7 @@ function Footer() {
               <Logo />
             </a>
             <p className="text-[14px] text-muted-foreground leading-[1.7] max-w-[280px] mb-6">
-              A HubSpot-certified B2B growth agency helping companies build scalable revenue systems through smart marketing and CRM excellence.
+              AI-powered growth systems for US B2B teams on HubSpot.
             </p>
             <div className="flex gap-3">
               {[
@@ -1512,29 +1519,23 @@ function Footer() {
             {
               heading: "Services",
               links: [
-                { label: "Outbound Marketing", href: "#services" },
-                { label: "Inbound Marketing", href: "#services" },
-                { label: "HubSpot CRM", href: "#services" },
-                { label: "RevOps", href: "#solutions" },
+                { label: "AI Pipeline Engine", href: "/services/ai-pipeline-engine" },
+                { label: "HubSpot AI Implementation", href: "/services/hubspot-ai" },
+                { label: "Fractional RevOps + AI", href: "/services/fractional-revops" },
               ],
             },
             {
-              heading: "Solutions",
+              heading: "Resources",
               links: [
-                { label: "Platform Solutions", href: "#solutions" },
-                { label: "Technical Solutions", href: "#solutions" },
-                { label: "Enablement", href: "#solutions" },
-                { label: "Growth Solutions", href: "#solutions" },
+                { label: "Case Studies", href: "/case-studies" },
+                { label: "Insights", href: "/insights" },
               ],
             },
             {
               heading: "Company",
               links: [
-                { label: "Meet the Team", href: "#team" },
-                { label: "Pricing", href: "#pricing" },
-                { label: "Resources", href: "#resources" },
-                { label: "Case Studies", href: "/case-studies" },
-                { label: "Contact", href: "#contact" },
+                { label: "About", href: "/about" },
+                { label: "Contact", href: "/contact" },
               ],
             },
           ].map((col) => (
@@ -1581,15 +1582,15 @@ export default function Page() {
     <main className="overflow-x-hidden">
       <Nav />
       <HeroGeometric
-        badge="HubSpot Partner & B2B Growth Agency"
-        title1="Turn Your Pipeline Into"
-        title2="Predictable Revenue"
+        badge="AI-Powered Growth Partner for US B2B Teams"
+        title1="AI-powered growth systems"
+        title2="for US B2B teams on HubSpot."
       />
       <HeroBottom />
       <LogoBar />
       <Services />
       <AIAdvantage />
-      <IntegrationHero ctaHref={MEETING_URL} />
+      <IntegrationHero ctaHref="/contact" />
       <Solutions />
       <Numbers />
       <Markets />

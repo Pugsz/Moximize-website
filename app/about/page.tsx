@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Moximize",
-  description: "Moximize builds AI-powered sales and marketing systems on HubSpot for US B2B teams. Founded by Steven Nichol Guiao.",
+  title: "About — Built for Operators | Moximize",
+  description: "Moximize is founder-led. We build AI-powered HubSpot systems for US B2B teams — no account managers, no offshore delivery, no surprises.",
   alternates: { canonical: "https://moximize.net/about" },
 };
 
@@ -16,81 +16,75 @@ export default function AboutPage() {
         </Link>
 
         <span className="inline-block text-[11px] font-bold uppercase tracking-[0.12em] bg-[#29ABE2]/10 border border-[#29ABE2]/30 text-[#29ABE2] px-3 py-1 rounded-full mb-6">
-          About Moximize
+          About
         </span>
 
-        <h1 className="font-bold text-[clamp(32px,5vw,52px)] tracking-tight leading-[1.1] mb-6">
-          We build the infrastructure.<br />You do the selling.
+        <h1 className="font-bold text-[clamp(36px,5vw,60px)] tracking-tight leading-[1.06] mb-12">
+          Built for operators.<br />Run by one.
         </h1>
-        <p className="text-[18px] text-[#72767a] leading-[1.7] mb-16">
-          Moximize builds AI-powered sales and marketing systems on top of HubSpot so US B2B teams can generate, qualify, and close more pipeline — without hiring more people.
-        </p>
 
-        {/* Founder note */}
-        <div className="flex flex-col sm:flex-row gap-8 items-start mb-16 p-8 bg-[#17181c] border border-[#242628] rounded-[24px]">
-          <div className="shrink-0">
-            <div className="w-20 h-20 rounded-full bg-[#000000] border-2 border-[#242628] overflow-hidden">
-              <img src="/logo.png" alt="Steven Nichol Guiao" className="w-full h-full object-cover" />
-            </div>
+        {/* Founder section */}
+        <div className="mb-16">
+          <h2 className="font-bold text-[22px] text-[#29ABE2] mb-6">Why Moximize exists</h2>
+          <div className="space-y-5 text-[16px] leading-[1.8] text-[#d9d9d9]">
+            <p>
+              Most B2B teams are stuck in the same place: they have HubSpot, they&apos;ve heard about AI, and they&apos;re still running the same manual processes they were running two years ago. Not because they don&apos;t want to change — because they don&apos;t have the time, the skills, or the right partner to build what actually works.
+            </p>
+            <p>
+              We work with one type of company: US-based B2B teams on HubSpot who want qualified pipeline and a CRM that actually reflects how they sell. We don&apos;t do brand work, social media strategy, or anything that doesn&apos;t connect directly to revenue. Everything we build is designed to generate meetings, close deals, and free your team from manual work.
+            </p>
+            <p>
+              This is founder-led work. You&apos;ll work directly with me — not an account manager, not an offshore team. I built these systems because I needed them, and now I build them for companies that need the same thing but don&apos;t have six months to figure it out themselves.
+            </p>
           </div>
-          <div className="space-y-4 text-[15px] text-[#d9d9d9] leading-[1.85]">
-            <p>I started Moximize because I kept seeing the same problem: B2B companies investing heavily in HubSpot and AI tools, but getting almost nothing out of them. The tools weren't the issue. The lack of a coherent system was.</p>
-            <p>Most agencies sell strategy decks and then disappear. Most tool vendors sell features and assume you'll figure out the workflow. What I found was that the real work — the architecture, the integrations, the data cleanup, the ongoing iteration — wasn't being done by anyone. It fell into the gap between "we bought HubSpot" and "we need pipeline."</p>
-            <p>Moximize closes that gap. We design the system, build it inside HubSpot, connect the AI to your real data, and operate it with you. Every system we ship is yours to own — no ongoing dependency on us, no proprietary black box. Just infrastructure that works.</p>
-            <p>If that's you, I'd like to talk.</p>
-            <div className="pt-2">
-              <div className="font-bold text-white">Steven Nichol Guiao</div>
-              <div className="text-[13px] text-[#72767a]">Founder, Moximize</div>
+
+          <div className="mt-10 flex items-center gap-5 p-6 bg-[#17181c] border border-[#242628] rounded-[20px]">
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#2B4EA0] to-[#29ABE2] flex items-center justify-center text-white font-black text-[22px] shrink-0">
+              N
+            </div>
+            <div>
+              <p className="font-bold text-[17px]">Nic Guiao</p>
+              <p className="text-[14px] text-[#72767a]">Founder, Moximize</p>
             </div>
           </div>
         </div>
 
-        {/* Standards */}
+        {/* Values */}
         <div className="mb-16">
-          <h2 className="font-bold text-[22px] text-white mb-6">The standard we hold</h2>
-          <div className="space-y-3">
+          <h2 className="font-bold text-[clamp(24px,3vw,36px)] mb-8">How we work</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { title: "We only take work we can do well.", body: "We don't pitch industries we don't understand or timelines we can't hit. If a project isn't a fit, we say so — directly, on the first call." },
-              { title: "We build systems, not deliverables.", body: "A strategy deck that sits unread is not a deliverable — it's a waste of your budget. Everything we ship is operational: it runs, it produces output, and you can measure it." },
-              { title: "You own everything we build.", body: "No proprietary platforms, no data trapped in our systems, no ongoing access fees. If you stop working with us tomorrow, you keep the infrastructure. Full stop." },
-              { title: "We report on outcomes, not activities.", body: "Our monthly reviews are built around pipeline data, not hour counts or feature lists. If it's not moving the number, it's not working — and we'll say that." },
-            ].map((s, i) => (
-              <div key={i} className="bg-[#17181c] border border-[#242628] rounded-[16px] p-6">
-                <h3 className="font-bold text-white mb-2">{s.title}</h3>
-                <p className="text-[14px] text-[#72767a] leading-[1.7]">{s.body}</p>
+              {
+                title: "Systems not services",
+                body: "We build things that run on their own. The goal is always to reduce your team&apos;s manual workload, not create more dependency on us.",
+              },
+              {
+                title: "HubSpot-native",
+                body: "We build inside HubSpot, not around it. Every workflow, every AI integration, every automation lives in the system your team already uses.",
+              },
+              {
+                title: "Operator-built",
+                body: "Everything we recommend is something we&apos;ve built and used ourselves. No theoretical frameworks. No recycled playbooks from a different industry.",
+              },
+              {
+                title: "Outcome-priced",
+                body: "Our pricing is tied to what we deliver, not how many hours we log. We define the outcome upfront and price accordingly.",
+              },
+            ].map((v) => (
+              <div key={v.title} className="p-6 bg-[#17181c] border border-[#242628] rounded-[16px]">
+                <h3 className="font-bold text-[17px] mb-2 text-[#29ABE2]">{v.title}</h3>
+                <p className="text-[14px] text-[#72767a] leading-[1.65]">{v.body}</p>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Who we work with */}
-        <div className="mb-16">
-          <h2 className="font-bold text-[22px] text-white mb-4">Who we work with</h2>
-          <p className="text-[15px] text-[#72767a] mb-6">We focus exclusively on US B2B companies. The industries we serve most often:</p>
-          <div className="grid sm:grid-cols-2 gap-3">
-            {[
-              "B2B SaaS — Series A through Series C",
-              "Professional services firms",
-              "Healthcare technology",
-              "Financial technology and fintech",
-              "Industrial and manufacturing tech",
-              "Consulting and advisory firms",
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3 text-[14px] text-[#d9d9d9] bg-[#17181c] border border-[#242628] px-4 py-3 rounded-[12px]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#29ABE2] shrink-0" />
-                {item}
-              </div>
-            ))}
-          </div>
-          <p className="text-[13px] text-[#4a4c50] mt-4">We don't work with e-commerce, B2C, consumer brands, or companies not on HubSpot.</p>
         </div>
 
         {/* CTA */}
         <div className="p-8 bg-[#17181c] border border-[#242628] rounded-[24px] text-center">
-          <h3 className="font-bold text-[22px] mb-2">Want to see if we're a fit?</h3>
-          <p className="text-[14px] text-[#72767a] mb-6">Book a 20-minute call. We'll look at your current setup and tell you exactly what we'd build.</p>
-          <Link href="/get-started" className="inline-flex items-center gap-2 bg-[#29ABE2] hover:bg-[#1a9fd4] text-black font-bold px-7 py-3.5 rounded-full text-[15px] transition-colors">
-            Book a 20-min fit call →
+          <h3 className="font-bold text-[20px] mb-2">Want to work together?</h3>
+          <p className="text-[14px] text-[#72767a] mb-6">Book a 20-minute fit call. No pitch — just a straight conversation about whether we&apos;re the right fit for your team.</p>
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-[#29ABE2] hover:bg-[#1a9fd4] text-black font-bold px-7 py-3.5 rounded-full text-[15px] transition-colors">
+            Book a fit call →
           </Link>
         </div>
       </div>

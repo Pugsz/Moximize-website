@@ -12,9 +12,11 @@ interface TabProps {
 }
 
 export const SlideTabs = ({
-  tabs = ["Services", "Solutions", "Markets", "Team", "Pricing", "Resources"],
+  tabs = ["Services", "Case Studies", "Insights", "About"],
+  hrefs,
 }: {
   tabs?: string[];
+  hrefs?: string[];
 }) => {
   const [position, setPosition] = useState<Position>({ left: 0, width: 0, opacity: 0 });
   const [selected, setSelected] = useState(0);
@@ -45,7 +47,7 @@ export const SlideTabs = ({
           ref={(el) => { tabsRef.current[i] = el; }}
           setPosition={setPosition}
           onClick={() => setSelected(i)}
-          href={`#${tab.toLowerCase()}`}
+          href={hrefs?.[i] ?? `#${tab.toLowerCase()}`}
         >
           {tab}
         </Tab>

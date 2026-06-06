@@ -80,7 +80,7 @@ export default function Article() {
         <div className="mt-14 p-8 bg-[#17181c] border border-[#242628] rounded-[24px] text-center">
           <h3 className="font-bold text-[20px] mb-2">Want to build the infrastructure AI needs to work?</h3>
           <p className="text-[14px] text-[#72767a] mb-6">Book a 20-minute call. We'll audit your current setup and tell you exactly what needs to change.</p>
-          <Link href="/get-started" className="inline-flex items-center gap-2 bg-[#29ABE2] hover:bg-[#1a9fd4] text-black font-bold px-7 py-3.5 rounded-full text-[15px] transition-colors">
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-[#29ABE2] hover:bg-[#1a9fd4] text-black font-bold px-7 py-3.5 rounded-full text-[15px] transition-colors">
             Book a fit call →
           </Link>
         </div>

@@ -4,22 +4,22 @@ import { motion } from "motion/react";
 
 export const testimonials = [
   {
-    text: "Moximize completely transformed how we approach outbound. Within 60 days we had a fully running cold email system booking 8–12 qualified meetings per month.",
+    text: "Moximize didn't just run our campaigns — they rebuilt how our HubSpot works. We're booking 3x more qualified calls with the same team size.",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
-    name: "Rafael D.",
-    role: "Head of Sales, SaaS Platform",
+    name: "VP of Sales",
+    role: "Series A SaaS, Boston",
   },
   {
-    text: "Jerson and the team built our entire HubSpot instance from scratch. Pipelines, automations, reporting — everything is clean and actually useful now.",
+    text: "I was skeptical about another agency. Nic built something inside our CRM that actually runs itself. Our SDRs finally have a real system.",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
-    name: "Maria L.",
-    role: "CEO, Professional Services Firm",
+    name: "Founder",
+    role: "B2B Professional Services, Chicago",
   },
   {
-    text: "The inbound strategy they developed brought us a 3x increase in organic leads over 4 months. The content is genuinely strategic, not just filler.",
+    text: "We replaced a $150k RevOps hire with Moximize's fractional service and got better output in the first month.",
     image: "https://randomuser.me/api/portraits/men/52.jpg",
-    name: "Kevin P.",
-    role: "Founder, Tech Consultancy",
+    name: "COO",
+    role: "E-commerce SaaS, New York",
   },
   {
     text: "We had tried two other agencies before Moximize. Nobody else understood our ICP the way they did. Our pipeline has never been this healthy.",

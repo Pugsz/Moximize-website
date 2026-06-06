@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Case Studies — Moximize",
-  description: "Real results from real B2B companies. See how Moximize drives pipeline, HubSpot adoption, and outbound performance.",
+  title: "Case Studies — Real Results from AI-Powered HubSpot Systems | Moximize",
+  description: "See how US B2B companies use Moximize's AI-powered HubSpot systems to grow pipeline and close more deals.",
   alternates: { canonical: "https://moximize.net/case-studies" },
 };
 
@@ -81,7 +81,7 @@ export default function CaseStudiesPage() {
         <div className="mt-16 text-center">
           <p className="text-[15px] text-[#72767a] mb-6">Ready to write your own case study?</p>
           <Link
-            href="/get-started"
+            href="/contact"
             className="inline-flex items-center gap-2 bg-[#29ABE2] hover:bg-[#1a9fd4] text-black font-bold px-8 py-4 rounded-full text-[15px] transition-colors"
           >
             Get Started Free →
