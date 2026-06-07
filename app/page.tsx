@@ -717,152 +717,106 @@ function Team() {
 
 const pricingPlans = [
   {
-    id: "basic",
-    name: "Basic",
-    tagline: "Build the foundation right.",
-    bestFor: "Early-stage teams with 1–5 salespeople",
-    monthlyPrice: 1497,
-    annualPrice: 1197,
-    annualTotal: 14364,
+    id: "ai-pipeline",
+    name: "AI Pipeline Engine",
+    tagline: "Qualified meetings in your calendar. Guaranteed minimum.",
+    bestFor: "B2B teams that need net-new pipeline without in-house SDR",
+    monthlyPrice: 4500,
+    annualPrice: 3600,
+    annualTotal: 43200,
     isPopular: false,
     spotsLeft: null,
-    cta: "Start with Basic",
+    cta: "Start Building Pipeline",
+    href: "/services/ai-pipeline-engine",
     groups: [
       {
-        label: "AI Lead Generation",
-        icon: "🤖",
-        items: [
-          { text: "AI prospect list building via Apollo.io (500 leads/mo)", included: true },
-          { text: "AI-written personalized email first lines", included: true },
-          { text: "1 active outbound campaign (email)", included: true },
-          { text: "LinkedIn outbound + Clay enrichment", included: false },
-        ],
-      },
-      {
-        label: "CRM & Pipeline",
-        icon: "⚙️",
-        items: [
-          { text: "Full HubSpot CRM setup + pipeline design", included: true },
-          { text: "Up to 500 contacts managed", included: true },
-          { text: "3 workflow automations", included: true },
-          { text: "HubSpot Breeze AI lead scoring", included: false },
-        ],
-      },
-      {
-        label: "Reporting & Strategy",
-        icon: "📊",
-        items: [
-          { text: "Monthly AI performance summary", included: true },
-          { text: "Monthly strategy check-in call (30 min)", included: true },
-          { text: "Dedicated account manager", included: false },
-        ],
-      },
-    ],
-  },
-  {
-    id: "growth",
-    name: "Growth",
-    tagline: "Your full revenue engine, fully managed.",
-    bestFor: "Scaling teams targeting 10–20 meetings/month",
-    monthlyPrice: 2497,
-    annualPrice: 1997,
-    annualTotal: 23964,
-    isPopular: true,
-    spotsLeft: 3,
-    cta: "Start Growing",
-    groups: [
-      {
-        label: "AI Lead Generation",
-        icon: "🤖",
-        items: [
-          { text: "Clay + Apollo AI enrichment (2,000 leads/mo)", included: true },
-          { text: "AI-personalized outreach at scale (every contact)", included: true },
-          { text: "LinkedIn + email outbound (up to 3 campaigns)", included: true },
-          { text: "Intent signal targeting + buying trigger alerts", included: true },
-        ],
-      },
-      {
-        label: "CRM & Pipeline",
-        icon: "⚙️",
-        items: [
-          { text: "Full HubSpot CRM setup + pipeline design", included: true },
-          { text: "Up to 2,000 contacts + HubSpot Breeze AI scoring", included: true },
-          { text: "Advanced automations + A/B testing", included: true },
-          { text: "Custom HubSpot integrations", included: false },
-        ],
-      },
-      {
-        label: "Reporting & Strategy",
-        icon: "📊",
-        items: [
-          { text: "Bi-weekly AI insights reports", included: true },
-          { text: "Pipeline velocity + ROI dashboard", included: true },
-          { text: "Bi-weekly strategy calls (45 min)", included: true },
-          { text: "Dedicated account manager", included: true },
-        ],
-      },
-    ],
-  },
-  {
-    id: "premium",
-    name: "Premium",
-    tagline: "White-glove service. Unlimited scope.",
-    bestFor: "Established teams who want a true growth partner",
-    monthlyPrice: 3997,
-    annualPrice: 3197,
-    annualTotal: 38364,
-    isPopular: false,
-    spotsLeft: null,
-    cta: "Go Premium",
-    groups: [
-      {
-        label: "AI Lead Generation",
-        icon: "🤖",
-        items: [
-          { text: "Full AI stack: Clay + Apollo + LinkedIn Sales Nav", included: true },
-          { text: "Unlimited contacts + AI enrichment", included: true },
-          { text: "ABM campaigns with AI account targeting", included: true },
-          { text: "LinkedIn Ads management (budget separate)", included: true },
-        ],
-      },
-      {
-        label: "CRM & Pipeline",
-        icon: "⚙️",
-        items: [
-          { text: "Everything in Growth", included: true },
-          { text: "Custom HubSpot integrations (Zapier, Salesforce, etc.)", included: true },
-          { text: "Full RevOps audit + AI workflow optimization", included: true },
-          { text: "Predictive pipeline analytics dashboard", included: true },
-        ],
-      },
-      {
-        label: "Campaigns & Outreach",
+        label: "Outbound System",
         icon: "📤",
         items: [
-          { text: "Unlimited active campaigns", included: true },
-          { text: "LinkedIn ads management (budget separate)", included: true },
-          { text: "Content strategy + monthly content pieces", included: true },
-          { text: "Full ABM (Account-Based Marketing) setup", included: true },
+          { text: "ICP research + Clay/Apollo enrichment", included: true },
+          { text: "AI-personalized email sequences", included: true },
+          { text: "Inbox + reply management", included: true },
+          { text: "LinkedIn outreach (Growth+ only)", included: false },
+        ],
+      },
+      {
+        label: "HubSpot Integration",
+        icon: "⚙️",
+        items: [
+          { text: "Full HubSpot sync (contacts, emails, meetings)", included: true },
+          { text: "Deliverability infrastructure", included: true },
+          { text: "Weekly performance reports", included: true },
+          { text: "Guaranteed meeting minimum", included: true },
+        ],
+      },
+    ],
+  },
+  {
+    id: "hubspot-ai",
+    name: "HubSpot AI Build",
+    tagline: "AI system inside your CRM in 30–45 days. One-time project fee.",
+    bestFor: "Teams on HubSpot ready to activate AI scoring, routing & automation",
+    monthlyPrice: 7500,
+    annualPrice: 7500,
+    annualTotal: 7500,
+    isPopular: true,
+    spotsLeft: null,
+    cta: "Start the Build",
+    href: "/services/hubspot-ai",
+    groups: [
+      {
+        label: "What Gets Built",
+        icon: "🤖",
+        items: [
+          { text: "HubSpot audit + data cleanup", included: true },
+          { text: "Breeze AI lead scoring", included: true },
+          { text: "Contact enrichment automation", included: true },
+          { text: "AI workflow automation (routing, follow-ups)", included: true },
+        ],
+      },
+      {
+        label: "Delivery",
+        icon: "📦",
+        items: [
+          { text: "30–45 day build timeline", included: true },
+          { text: "Written architecture plan before build", included: true },
+          { text: "Team training + full documentation", included: true },
+          { text: "30-day post-launch support", included: true },
+        ],
+      },
+    ],
+  },
+  {
+    id: "fractional-revops",
+    name: "Fractional RevOps + AI",
+    tagline: "Replace a $180k/yr hire. Ongoing HubSpot + AI management.",
+    bestFor: "Teams that want expert ongoing RevOps without a full-time hire",
+    monthlyPrice: 6000,
+    annualPrice: 4800,
+    annualTotal: 57600,
+    isPopular: false,
+    spotsLeft: null,
+    cta: "Start RevOps",
+    href: "/services/fractional-revops",
+    groups: [
+      {
+        label: "Ongoing Management",
+        icon: "⚙️",
+        items: [
+          { text: "HubSpot portal management + hygiene", included: true },
+          { text: "AI system maintenance + monitoring", included: true },
+          { text: "New workflow builds included", included: true },
+          { text: "Direct Slack access (1 biz day SLA)", included: true },
         ],
       },
       {
         label: "Reporting & Strategy",
         icon: "📊",
         items: [
-          { text: "Weekly performance reports", included: true },
-          { text: "Executive-ready custom dashboards", included: true },
-          { text: "Weekly strategy calls (60 min)", included: true },
-          { text: "Quarterly business review (QBR)", included: true },
-        ],
-      },
-      {
-        label: "Support",
-        icon: "💬",
-        items: [
-          { text: "Dedicated account manager", included: true },
-          { text: "Priority support — 4h response guarantee", included: true },
-          { text: "Dedicated Slack channel", included: true },
-          { text: "Direct access to founders", included: true },
+          { text: "Weekly pipeline reporting", included: true },
+          { text: "Bi-weekly strategy calls", included: true },
+          { text: "Quarterly business reviews", included: true },
+          { text: "Sales process documentation", included: true },
         ],
       },
     ],
@@ -905,7 +859,7 @@ function Pricing() {
             Invest in Growth.<br />Not Overhead.
           </h2>
           <p className="mt-4 text-[17px] text-[#72767a] max-w-[500px] mx-auto">
-            A full-time marketing hire costs $80K–$120K/yr in salary alone. Our plans deliver a complete, managed revenue system — starting at $1,497/mo.
+            A full-time RevOps or SDR hire costs $150K–$200K/yr in salary alone. Our services deliver the same output — starting at $4,500/mo.
           </p>
         </div>
 
@@ -961,7 +915,7 @@ function Pricing() {
             </thead>
             <tbody>
               {[
-                ["Monthly cost", "$8,000–$12,000", "From $1,497"],
+                ["Monthly cost", "$12,500–$16,700", "From $4,500"],
                 ["Ramp time", "3–6 months", "Live in 2 weeks"],
                 ["Tools included", "Extra $500–$2K/mo", "All included"],
                 ["HubSpot expertise", "1 generalist", "Certified team"],
@@ -1051,7 +1005,7 @@ function Pricing() {
                 {/* CTA */}
                 <div className="px-8 pb-6">
                   <a
-                    href="/contact"
+                    href={plan.href}
                     className={cn(
                       "w-full py-3.5 rounded-xl font-semibold text-[15px] transition-all duration-200 flex items-center justify-center gap-2",
                       plan.isPopular
@@ -1062,7 +1016,7 @@ function Pricing() {
                     {plan.cta} <ArrowRight className="w-4 h-4" />
                   </a>
                   <p className="text-center text-[11px] text-[#72767a] mt-2">
-                    Starts with a free 30-min discovery call
+                    Full pricing + details on service page
                   </p>
                 </div>
 
@@ -1117,10 +1071,10 @@ function Pricing() {
             <div className="text-[40px] shrink-0">💡</div>
             <div className="flex-1">
               <h4 className="font-bold text-[18px] text-white mb-1.5">
-                Why pay $80K–$120K for a full-time hire when you can have the whole stack?
+                Why pay $150K–$200K for a full-time hire when you can have the whole stack?
               </h4>
               <p className="text-[14px] text-[#72767a] leading-[1.7]">
-                Our Growth plan replaces a senior marketing manager, a HubSpot admin, and an outbound SDR — fully managed, with no overhead, benefits, or ramp time. Most clients see ROI within the first 90 days.
+                Our Fractional RevOps service replaces a senior RevOps hire — fully managed, no overhead, no ramp time. Most clients see ROI within the first 90 days.
               </p>
             </div>
             <a
