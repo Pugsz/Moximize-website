@@ -15,10 +15,11 @@ export const metadata: Metadata = {
   description:
     "Moximize builds AI-powered growth systems for US B2B teams on HubSpot. AI Pipeline Engine, HubSpot AI Implementation, and Fractional RevOps + AI. $12M+ pipeline influenced.",
   keywords: [
+    "AI lead generation B2B", "outbound marketing AI", "inbound marketing AI",
     "HubSpot partner", "B2B marketing agency", "CRM implementation",
-    "outbound marketing", "AI lead generation", "revenue operations",
-    "HubSpot CRM setup", "B2B growth agency", "cold email agency",
-    "LinkedIn outbound", "HubSpot certified partner Philippines",
+    "HubSpot AI implementation", "revenue operations", "fractional RevOps",
+    "cold email agency", "LinkedIn outbound", "B2B growth agency",
+    "HubSpot certified partner", "AI-powered outbound", "B2B inbound marketing",
   ],
   authors: [{ name: "Moximize", url: "https://moximize.net" }],
   creator: "Moximize",

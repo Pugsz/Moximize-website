@@ -7,15 +7,15 @@ import { Check, ArrowLeft } from "lucide-react";
 import { useHubSpotForm } from "@/hooks/useHubSpotForm";
 
 const planDetails: Record<string, { name: string; price: string; color: string; perks: string[] }> = {
-  "ai-pipeline": {
-    name: "AI Pipeline Engine",
+  "ai-lead-gen": {
+    name: "AI Lead Generation",
     price: "From $4,500/mo",
     color: "from-[#2B4EA0] to-[#29ABE2]",
     perks: [
-      "AI prospect list building at scale",
-      "Personalized cold email + LinkedIn sequences",
-      "HubSpot pipeline integration",
-      "Guaranteed qualified meetings or we work free",
+      "Outbound: cold email + LinkedIn with AI enrichment",
+      "Inbound: SEO content + HubSpot landing pages",
+      "AI-powered lead nurture sequences",
+      "Unified lead scoring flowing into HubSpot",
     ],
   },
   "hubspot-ai": {

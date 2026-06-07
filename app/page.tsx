@@ -265,13 +265,13 @@ function Ticker() {
 
 const services = [
   {
-    icon: "📤",
-    title: "AI Pipeline Engine",
+    icon: "🎯",
+    title: "AI Lead Generation",
     badge: "AI",
     price: "From $4,500/mo",
-    body: "Qualified meetings in your calendar every month — guaranteed minimum. We build and run your entire outbound system: ICP research, Clay enrichment, AI-personalized sequences, and inbox management.",
+    body: "We run your full top-of-funnel — outbound sequences that find your ICP and inbound systems that attract them. AI enrichment, personalized outreach, content automation, and lead scoring. Everything flows into HubSpot.",
     cta: "Learn more",
-    href: "/services/ai-pipeline-engine",
+    href: "/services/ai-lead-generation",
   },
   {
     icon: "🤖",
@@ -717,36 +717,36 @@ function Team() {
 
 const pricingPlans = [
   {
-    id: "ai-pipeline",
-    name: "AI Pipeline Engine",
-    tagline: "Qualified meetings in your calendar. Guaranteed minimum.",
-    bestFor: "B2B teams that need net-new pipeline without in-house SDR",
+    id: "ai-lead-gen",
+    name: "AI Lead Generation",
+    tagline: "Outbound finds them. Inbound attracts them. AI converts them.",
+    bestFor: "B2B teams that need a full top-of-funnel engine, not just cold email",
     monthlyPrice: 4500,
     annualPrice: 3600,
     annualTotal: 43200,
     isPopular: false,
     spotsLeft: null,
-    cta: "Start Building Pipeline",
-    href: "/services/ai-pipeline-engine",
+    cta: "Start Generating Leads",
+    href: "/services/ai-lead-generation",
     groups: [
       {
-        label: "Outbound System",
+        label: "Outbound Engine",
         icon: "📤",
         items: [
-          { text: "ICP research + Clay/Apollo enrichment", included: true },
-          { text: "AI-personalized email sequences", included: true },
+          { text: "ICP research + Clay/Apollo AI enrichment", included: true },
+          { text: "AI-personalized cold email sequences", included: true },
+          { text: "LinkedIn outreach + connection sequences", included: true },
           { text: "Inbox + reply management", included: true },
-          { text: "LinkedIn outreach (Growth+ only)", included: false },
         ],
       },
       {
-        label: "HubSpot Integration",
-        icon: "⚙️",
+        label: "Inbound System",
+        icon: "📥",
         items: [
-          { text: "Full HubSpot sync (contacts, emails, meetings)", included: true },
-          { text: "Deliverability infrastructure", included: true },
-          { text: "Weekly performance reports", included: true },
-          { text: "Guaranteed meeting minimum", included: true },
+          { text: "AI content strategy + SEO blog posts", included: true },
+          { text: "HubSpot landing pages + lead capture forms", included: true },
+          { text: "AI-powered lead nurture sequences", included: true },
+          { text: "Unified lead scoring (inbound + outbound)", included: true },
         ],
       },
     ],
@@ -1473,7 +1473,7 @@ function Footer() {
             {
               heading: "Services",
               links: [
-                { label: "AI Pipeline Engine", href: "/services/ai-pipeline-engine" },
+                { label: "AI Lead Generation", href: "/services/ai-lead-generation" },
                 { label: "HubSpot AI Implementation", href: "/services/hubspot-ai" },
                 { label: "Fractional RevOps + AI", href: "/services/fractional-revops" },
               ],
@@ -1536,9 +1536,9 @@ export default function Page() {
     <main className="overflow-x-hidden">
       <Nav />
       <HeroGeometric
-        badge="AI-Powered Growth Partner for US B2B Teams"
-        title1="AI-powered growth systems"
-        title2="for US B2B teams on HubSpot."
+        badge="AI Lead Generation for US B2B Teams"
+        title1="AI-powered lead generation —"
+        title2="outbound, inbound, built on HubSpot."
       />
       <HeroBottom />
       <LogoBar />
