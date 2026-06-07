@@ -11,9 +11,9 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://moximize.net"),
-  title: "Moximize — HubSpot Partner & AI-Powered B2B Growth Agency",
+  title: "Moximize — AI-Powered Growth Systems for US B2B Teams on HubSpot",
   description:
-    "Moximize helps B2B companies build predictable pipeline through AI-powered outbound, HubSpot CRM implementation, and full-funnel revenue operations. 30+ companies. Results in 30 days.",
+    "Moximize builds AI-powered growth systems for US B2B teams on HubSpot. AI Pipeline Engine, HubSpot AI Implementation, and Fractional RevOps + AI. $12M+ pipeline influenced.",
   keywords: [
     "HubSpot partner", "B2B marketing agency", "CRM implementation",
     "outbound marketing", "AI lead generation", "revenue operations",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   creator: "Moximize",
   alternates: { canonical: "https://moximize.net" },
   openGraph: {
-    title: "Moximize — HubSpot Partner & AI-Powered B2B Growth Agency",
+    title: "Moximize — AI-Powered Growth Systems for US B2B Teams on HubSpot",
     description:
-      "AI-powered outbound, HubSpot CRM, and revenue operations for B2B teams. Measurable pipeline in 90 days — guaranteed.",
+      "AI-powered growth systems for US B2B teams on HubSpot. $12M+ pipeline influenced, 40+ AI workflows shipped.",
     url: "https://moximize.net",
     siteName: "Moximize",
     locale: "en_US",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Moximize — HubSpot Partner & AI-Powered B2B Growth Agency",
+    title: "Moximize — AI-Powered Growth Systems for US B2B Teams on HubSpot",
     description:
-      "AI-powered outbound, HubSpot CRM, and revenue ops for B2B teams. 90-day pipeline guarantee.",
+      "AI-powered growth systems for US B2B teams on HubSpot. $12M+ pipeline influenced.",
   },
   robots: {
     index: true,
@@ -54,7 +54,7 @@ const schemaOrg = {
   description:
     "AI-powered B2B growth agency specialising in HubSpot CRM implementation, outbound marketing, and revenue operations.",
   telephone: "+18633407702",
-  email: "Stevenguiao@moximize.net",
+  email: "nic@moximize.net",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Balanga City",

@@ -84,7 +84,7 @@ export default function CaseStudiesPage() {
             href="/contact"
             className="inline-flex items-center gap-2 bg-[#29ABE2] hover:bg-[#1a9fd4] text-black font-bold px-8 py-4 rounded-full text-[15px] transition-colors"
           >
-            Get Started Free →
+            Book a fit call →
           </Link>
         </div>
       </div>

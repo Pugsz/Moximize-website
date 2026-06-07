@@ -1331,7 +1331,7 @@ function Contact() {
 
             <div className="flex flex-col gap-5 mb-10">
               {[
-                { icon: "📧", label: "Email", value: "Stevenguiao@moximize.net", href: "mailto:Stevenguiao@moximize.net" },
+                { icon: "📧", label: "Email", value: "nic@moximize.net", href: "mailto:nic@moximize.net" },
                 { icon: "📞", label: "Phone", value: "+1 (863) 340-7702", href: "tel:+18633407702" },
                 { icon: "📍", label: "Location", value: "Westfield Residences, Balanga City, Bataan, Philippines", href: undefined },
               ].map((d) => (

@@ -4,9 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CheckCircle, Calendar, ArrowRight } from "lucide-react";
 
-const MEETING_URL =
-  "https://moximize.net/meetings/steven-nichol-guiao?uuid=956a4a9a-6fb4-4b72-87b6-95b774ab8f5b&hsLang=en";
-
 export default function ThankYou() {
   const [visible, setVisible] = useState(false);
 
@@ -38,7 +35,7 @@ export default function ThankYou() {
         </h1>
         <p className="text-[16px] leading-[1.7] text-[#72767a] mb-10">
           Your resource is on its way to your inbox. While you wait — book a free
-          strategy call and let's talk about how we can help you grow faster.
+          20-min fit call and let's talk about how we can help you grow faster.
         </p>
 
         {/* CTA card */}
@@ -50,20 +47,18 @@ export default function ThankYou() {
                 <Calendar className="w-6 h-6 text-[#29ABE2]" />
               </span>
             </div>
-            <h2 className="font-bold text-[20px] mb-2">Book a Free Strategy Call</h2>
+            <h2 className="font-bold text-[20px] mb-2">Book a Free 20-Min Fit Call</h2>
             <p className="text-[14px] text-[#72767a] mb-6 leading-[1.6]">
-              30 minutes. No pitch. Just a clear plan for your pipeline, outbound,
+              20 minutes. No pitch. Just a clear plan for your pipeline, outbound,
               or HubSpot setup — whatever you need most right now.
             </p>
-            <a
-              href={MEETING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 bg-[#29ABE2] hover:bg-[#1a9fd4] text-black font-bold px-7 py-3.5 rounded-full text-[15px] transition-colors"
             >
-              Schedule My Call
+              Book a fit call
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
 
