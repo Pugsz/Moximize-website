@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About — Built for Operators | Moximize",
-  description: "Moximize is founder-led. We build AI-powered HubSpot systems for US B2B teams — no account managers, no offshore delivery, no surprises.",
+  description: "Moximize is founder-led. We build AI-powered lead generation and revenue systems for B2B teams — no account managers, no offshore delivery, no surprises.",
   alternates: { canonical: "https://moximize.net/about" },
 };
 
@@ -28,10 +28,10 @@ export default function AboutPage() {
           <h2 className="font-bold text-[22px] text-[#29ABE2] mb-6">Why Moximize exists</h2>
           <div className="space-y-5 text-[16px] leading-[1.8] text-[#d9d9d9]">
             <p>
-              Most B2B teams are stuck in the same place: they have HubSpot, they&apos;ve heard about AI, and they&apos;re still running the same manual processes they were running two years ago. Not because they don&apos;t want to change — because they don&apos;t have the time, the skills, or the right partner to build what actually works.
+              Most B2B teams are stuck in the same place: they&apos;ve heard about AI, they know their pipeline is inconsistent, and they&apos;re still running the same manual processes they were running two years ago. Not because they don&apos;t want to change — because they don&apos;t have the time, the skills, or the right partner to build what actually works.
             </p>
             <p>
-              We work with one type of company: US-based B2B teams on HubSpot who want qualified pipeline and a CRM that actually reflects how they sell. We don&apos;t do brand work, social media strategy, or anything that doesn&apos;t connect directly to revenue. Everything we build is designed to generate meetings, close deals, and free your team from manual work.
+              We work with one type of company: B2B teams who want qualified pipeline and a revenue system that actually reflects how they sell. We don&apos;t do brand work, social media strategy, or anything that doesn&apos;t connect directly to revenue. Everything we build is designed to generate meetings, close deals, and free your team from manual work.
             </p>
             <p>
               This is founder-led work. You&apos;ll work directly with me — not an account manager, not an offshore team. I built these systems because I needed them, and now I build them for companies that need the same thing but don&apos;t have six months to figure it out themselves.
@@ -59,8 +59,8 @@ export default function AboutPage() {
                 body: "We build things that run on their own. The goal is always to reduce your team&apos;s manual workload, not create more dependency on us.",
               },
               {
-                title: "HubSpot-native",
-                body: "We build inside HubSpot, not around it. Every workflow, every AI integration, every automation lives in the system your team already uses.",
+                title: "CRM-native",
+                body: "We build inside your CRM, not around it. Every workflow, every AI integration, every automation lives in the system your team already uses.",
               },
               {
                 title: "Operator-built",

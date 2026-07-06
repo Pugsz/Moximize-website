@@ -27,7 +27,7 @@ export default function ContactPage() {
               Book a 20-min fit call
             </h1>
             <p className="text-[16px] text-[#d9d9d9] leading-[1.7] mb-10">
-              We&apos;ll look at your HubSpot setup, understand your goals, and tell you honestly whether Moximize is the right fit. No pitch — just a straight conversation. If we&apos;re not the right fit, we&apos;ll tell you that too and point you toward who is.
+              We&apos;ll look at your current setup, understand your goals, and tell you honestly whether Moximize is the right fit. No pitch — just a straight conversation. If we&apos;re not the right fit, we&apos;ll tell you that too and point you toward who is.
             </p>
 
             {/* What happens on the call */}
@@ -35,7 +35,7 @@ export default function ContactPage() {
               <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#29ABE2] mb-4">What happens on the call</p>
               <ul className="space-y-3">
                 {[
-                  "We'll look at your current HubSpot setup and pipeline",
+                  "We'll look at your current CRM setup and pipeline",
                   "Tell you honestly whether Moximize is a fit for your stage",
                   "If we're not the right fit, we'll point you toward who is",
                 ].map((step, i) => (

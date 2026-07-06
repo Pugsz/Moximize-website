@@ -265,29 +265,38 @@ function Ticker() {
 
 const services = [
   {
-    icon: "🎯",
-    title: "AI Lead Generation",
+    icon: "📤",
+    title: "AI Outbound Marketing",
     badge: "AI",
     price: "From $4,500/mo",
-    body: "We run your full top-of-funnel — outbound sequences that find your ICP and inbound systems that attract them. AI enrichment, personalized outreach, content automation, and lead scoring. Everything flows into HubSpot.",
+    body: "We find your ICP and book meetings for you. AI-enriched prospect lists, personalized cold email, LinkedIn outreach, and inbox management — all synced to your CRM automatically.",
     cta: "Learn more",
-    href: "/services/ai-lead-generation",
+    href: "/services/ai-outbound",
+  },
+  {
+    icon: "📥",
+    title: "AI Inbound Marketing",
+    badge: "AI",
+    price: "From $3,500/mo",
+    body: "We build the system that brings leads to you. AI content strategy, SEO blog posts, landing pages, lead magnets, and nurture sequences — compounding over time into a consistent inbound engine.",
+    cta: "Learn more",
+    href: "/services/ai-inbound",
   },
   {
     icon: "🤖",
-    title: "HubSpot AI Implementation",
+    title: "Custom AI Build",
     badge: "AI",
     price: "From $7,500 (project)",
-    body: "A production-ready AI system inside your CRM in 30–45 days. AI workflows, lead scoring, enrichment automation, and Breeze AI — all built to your pipeline, not a generic template.",
+    body: "We build the AI application your business actually needs — custom workflows, automation tools, lead scoring systems, CRM integrations, and AI-powered processes built specifically for how you operate.",
     cta: "Learn more",
-    href: "/services/hubspot-ai",
+    href: "/services/custom-ai-build",
   },
   {
     icon: "⚙️",
-    title: "Fractional RevOps + AI",
+    title: "Revenue Operations Partner",
     badge: "AI",
     price: "From $6,000/mo",
-    body: "Replace a $180k/yr RevOps hire for a fraction of the cost. Ongoing HubSpot management, AI system maintenance, reporting, and revenue operations — run by someone who's built these systems before.",
+    body: "Replace a $180k/yr RevOps hire for a fraction of the cost. Ongoing CRM management, AI system maintenance, reporting, and revenue operations — run by someone who's built these systems before.",
     cta: "Learn more",
     href: "/services/fractional-revops",
   },
@@ -301,7 +310,7 @@ function Services() {
           <div>
             <SectionLabel>What We Do</SectionLabel>
             <h2 className="font-bold text-[clamp(32px,4vw,52px)] tracking-[-0.02em] leading-[1.08] text-foreground">
-              Three Ways to<br />Work With Us
+              Four Ways to<br />Work With Us
             </h2>
           </div>
           <div>
@@ -317,7 +326,7 @@ function Services() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-[#242628] border border-[#242628] rounded-[20px] overflow-hidden">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-px bg-[#242628] border border-[#242628] rounded-[20px] overflow-hidden">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.1} className="group bg-[#17181c] hover:bg-[#1e1f24] transition-colors relative overflow-hidden">
               <div className="p-12 h-full flex flex-col">
@@ -463,9 +472,9 @@ function AIAdvantage() {
 /* ── solutions ────────────────────────────────────────────────────────────── */
 
 const solutions = [
-  { num: "01 — Platform", title: "CRM Setup & Optimization", body: "Full HubSpot CRM implementation, pipeline design, deal stages, property configuration, and ongoing portal health checks." },
-  { num: "02 — Technical", title: "Integrations & Automation", body: "Connect HubSpot to your stack — Slack, Salesforce, Zapier, billing tools, and custom APIs. Build workflows that eliminate manual work." },
-  { num: "03 — Enablement", title: "Training & Support", body: "HubSpot onboarding, team training sessions, SOPs, and ongoing support so your team actually uses the tools you've paid for." },
+  { num: "01 — Platform", title: "CRM Setup & Optimization", body: "Full CRM implementation, pipeline design, deal stages, property configuration, and ongoing portal health checks — on any CRM platform." },
+  { num: "02 — Technical", title: "Integrations & Automation", body: "Connect your CRM to your full stack — Slack, Zapier, billing tools, and custom APIs. Build AI workflows that eliminate manual work." },
+  { num: "03 — Enablement", title: "Training & Support", body: "Team onboarding, training sessions, SOPs, and ongoing support so your team actually uses the tools you've paid for." },
   { num: "04 — Digital", title: "Landing Pages & Content", body: "High-converting landing pages, email nurture sequences, case studies, and content strategy that drives organic and paid traffic." },
   { num: "05 — Growth", title: "Outbound & Demand Gen", body: "AI-powered prospecting, cold email, LinkedIn outreach, paid ads, and ABM campaigns — coordinated to fill your pipeline consistently." },
 ];
@@ -614,7 +623,7 @@ const team = [
     role: "Founder, Moximize",
     badge: "Founder",
     linkedin: "https://linkedin.com/company/moximize",
-    bio: "Operator-turned-consultant. Built Moximize to deliver the AI-powered HubSpot systems that most B2B teams need but can't build in-house. Every client engagement is founder-led — you work directly with me.",
+    bio: "Operator-turned-consultant. Built Moximize to deliver the AI-powered revenue systems that most B2B teams need but can't build in-house. Every client engagement is founder-led — you work directly with me.",
   },
   {
     photo: "/Krisha Manalo.jpg",
@@ -632,7 +641,7 @@ const team = [
     role: "Chief Revenue Officer",
     badge: "CRO",
     linkedin: "https://linkedin.com/company/moximize",
-    bio: "Specializes in HubSpot and revenue operations, helping companies build structured, scalable revenue systems through automation and data-driven insights. The architect behind our clients' most impactful CRM transformations.",
+    bio: "Specializes in CRM systems and revenue operations, helping companies build structured, scalable revenue infrastructure through automation and data-driven insights. The architect behind our clients' most impactful revenue transformations.",
   },
   {
     photo: "/Katrina Vidal.png",
@@ -655,7 +664,7 @@ function Team() {
             Led by Specialists,<br />Not Generalists
           </h2>
           <p className="mt-3.5 text-[17px] leading-[1.7] text-muted-foreground max-w-[480px]">
-            Our leadership team brings deep expertise in HubSpot, revenue operations, and B2B marketing.
+            Our leadership team brings deep expertise in AI, revenue operations, and B2B growth.
           </p>
         </div>
 
@@ -717,17 +726,17 @@ function Team() {
 
 const pricingPlans = [
   {
-    id: "ai-lead-gen",
-    name: "AI Lead Generation",
-    tagline: "Outbound finds them. Inbound attracts them. AI converts them.",
-    bestFor: "B2B teams that need a full top-of-funnel engine, not just cold email",
+    id: "ai-outbound",
+    name: "AI Outbound Marketing",
+    tagline: "Qualified meetings in your calendar. Every month.",
+    bestFor: "B2B teams that need net-new pipeline without in-house SDR",
     monthlyPrice: 4500,
     annualPrice: 3600,
     annualTotal: 43200,
     isPopular: false,
     spotsLeft: null,
-    cta: "Start Generating Leads",
-    href: "/services/ai-lead-generation",
+    cta: "Start Outbound",
+    href: "/services/ai-outbound",
     groups: [
       {
         label: "Outbound Engine",
@@ -740,38 +749,73 @@ const pricingPlans = [
         ],
       },
       {
-        label: "Inbound System",
-        icon: "📥",
+        label: "CRM Integration",
+        icon: "⚙️",
         items: [
-          { text: "AI content strategy + SEO blog posts", included: true },
-          { text: "HubSpot landing pages + lead capture forms", included: true },
-          { text: "AI-powered lead nurture sequences", included: true },
-          { text: "Unified lead scoring (inbound + outbound)", included: true },
+          { text: "Full CRM sync (contacts, emails, meetings)", included: true },
+          { text: "Deliverability infrastructure setup", included: true },
+          { text: "Weekly performance reports", included: true },
+          { text: "Guaranteed meeting minimum", included: true },
         ],
       },
     ],
   },
   {
-    id: "hubspot-ai",
-    name: "HubSpot AI Build",
-    tagline: "AI system inside your CRM in 30–45 days. One-time project fee.",
-    bestFor: "Teams on HubSpot ready to activate AI scoring, routing & automation",
+    id: "ai-inbound",
+    name: "AI Inbound Marketing",
+    tagline: "Leads that come to you. Compounding every month.",
+    bestFor: "B2B teams building long-term pipeline through content and SEO",
+    monthlyPrice: 3500,
+    annualPrice: 2800,
+    annualTotal: 33600,
+    isPopular: true,
+    spotsLeft: null,
+    cta: "Start Inbound",
+    href: "/services/ai-inbound",
+    groups: [
+      {
+        label: "Inbound System",
+        icon: "📥",
+        items: [
+          { text: "AI content strategy + SEO blog posts", included: true },
+          { text: "Landing pages + lead capture forms", included: true },
+          { text: "Lead magnet creation", included: true },
+          { text: "AI-powered nurture sequences", included: true },
+        ],
+      },
+      {
+        label: "Lead Management",
+        icon: "🎯",
+        items: [
+          { text: "Unified lead scoring (inbound + outbound)", included: true },
+          { text: "CRM integration + contact routing", included: true },
+          { text: "Monthly performance reports", included: true },
+          { text: "90-day minimum engagement", included: true },
+        ],
+      },
+    ],
+  },
+  {
+    id: "custom-ai-build",
+    name: "Custom AI Build",
+    tagline: "We build the AI application your business actually needs.",
+    bestFor: "Teams ready to activate AI in their workflows — any CRM, any stack",
     monthlyPrice: 7500,
     annualPrice: 7500,
     annualTotal: 7500,
-    isPopular: true,
+    isPopular: false,
     spotsLeft: null,
     cta: "Start the Build",
-    href: "/services/hubspot-ai",
+    href: "/services/custom-ai-build",
     groups: [
       {
         label: "What Gets Built",
         icon: "🤖",
         items: [
-          { text: "HubSpot audit + data cleanup", included: true },
-          { text: "Breeze AI lead scoring", included: true },
-          { text: "Contact enrichment automation", included: true },
-          { text: "AI workflow automation (routing, follow-ups)", included: true },
+          { text: "System audit + architecture plan", included: true },
+          { text: "AI lead scoring + enrichment automation", included: true },
+          { text: "CRM workflow automation (routing, follow-ups)", included: true },
+          { text: "Custom AI app for your specific use case", included: true },
         ],
       },
       {
@@ -788,35 +832,35 @@ const pricingPlans = [
   },
   {
     id: "fractional-revops",
-    name: "Fractional RevOps + AI",
-    tagline: "Replace a $180k/yr hire. Ongoing HubSpot + AI management.",
-    bestFor: "Teams that want expert ongoing RevOps without a full-time hire",
+    name: "Revenue Operations Partner",
+    tagline: "Fix the leaky pipeline. Ongoing RevOps + AI management.",
+    bestFor: "B2B teams that want expert RevOps without a $180k/yr in-house hire",
     monthlyPrice: 6000,
     annualPrice: 4800,
     annualTotal: 57600,
     isPopular: false,
     spotsLeft: null,
-    cta: "Start RevOps",
+    cta: "Start with a $1,500 Audit",
     href: "/services/fractional-revops",
     groups: [
       {
-        label: "Ongoing Management",
+        label: "Monthly Deliverables",
         icon: "⚙️",
         items: [
-          { text: "HubSpot portal management + hygiene", included: true },
-          { text: "AI system maintenance + monitoring", included: true },
-          { text: "New workflow builds included", included: true },
-          { text: "Direct Slack access (1 biz day SLA)", included: true },
+          { text: "Weekly pipeline call (30 min)", included: true },
+          { text: "Monthly revenue report + recommendations", included: true },
+          { text: "4 workflow builds per month", included: true },
+          { text: "CRM hygiene + AI system maintenance", included: true },
         ],
       },
       {
-        label: "Reporting & Strategy",
+        label: "Entry Point",
         icon: "📊",
         items: [
-          { text: "Weekly pipeline reporting", included: true },
-          { text: "Bi-weekly strategy calls", included: true },
-          { text: "Quarterly business reviews", included: true },
-          { text: "Sales process documentation", included: true },
+          { text: "$1,500 Revenue System Audit (entry step)", included: true },
+          { text: "Audit credited to first month if you continue", included: true },
+          { text: "Free audit for existing Moximize clients", included: true },
+          { text: "Direct Slack access (1 biz day SLA)", included: true },
         ],
       },
     ],
@@ -866,7 +910,7 @@ function Pricing() {
         {/* Trust bar */}
         <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
           {[
-            { icon: "🏆", text: "HubSpot Certified Partner" },
+            { icon: "🤖", text: "AI-Certified Team" },
             { icon: "📈", text: "30+ B2B Companies Helped" },
             { icon: "🛡️", text: "90-Day Results Commitment" },
             { icon: "🔓", text: "No Lock-In After 90 Days" },
@@ -918,7 +962,7 @@ function Pricing() {
                 ["Monthly cost", "$12,500–$16,700", "From $4,500"],
                 ["Ramp time", "3–6 months", "Live in 2 weeks"],
                 ["Tools included", "Extra $500–$2K/mo", "All included"],
-                ["HubSpot expertise", "1 generalist", "Certified team"],
+                ["Revenue ops expertise", "1 generalist", "Specialist team"],
                 ["Scalability", "Hire more staff", "Upgrade your plan"],
                 ["Cancel anytime", "Severance + notice", "Month-to-month"],
               ].map(([label, inhouseVal, moxVal], i) => (
@@ -1132,12 +1176,12 @@ function Pricing() {
 /* ── certifications ───────────────────────────────────────────────────────── */
 
 const certs = [
-  { icon: "🏆", label: "HubSpot Certified" },
-  { icon: "📊", label: "HubSpot Marketing" },
-  { icon: "🔗", label: "HubSpot Sales" },
-  { icon: "⚙️", label: "HubSpot RevOps" },
+  { icon: "🤖", label: "AI Automation" },
+  { icon: "📤", label: "Outbound Marketing" },
+  { icon: "📥", label: "Inbound Marketing" },
+  { icon: "⚙️", label: "Revenue Operations" },
   { icon: "📧", label: "Email Marketing" },
-  { icon: "🎯", label: "Content Marketing" },
+  { icon: "🎯", label: "B2B Growth" },
 ];
 
 function Certifications() {
@@ -1177,8 +1221,8 @@ const caseStudyPreviews = [
   },
   {
     slug: "hubspot-crm-implementation",
-    tag: "HubSpot · CRM",
-    title: "Professional Services Firm: 95% HubSpot Adoption in 3 Weeks",
+    tag: "CRM · Professional Services",
+    title: "Professional Services Firm: 95% CRM Adoption in 3 Weeks",
     result: "95%",
     metric: "CRM adoption rate",
     industry: "Professional Services",
@@ -1326,7 +1370,7 @@ function Contact() {
               Ready to build your<br />AI-powered growth system?
             </h2>
             <p className="text-[16px] leading-[1.7] text-muted-foreground mb-10">
-              We&apos;ll look at your HubSpot setup, understand your goals, and tell you honestly whether Moximize is the right fit. No pitch — just a straight conversation.
+              We&apos;ll look at your current setup, understand your goals, and tell you honestly whether Moximize is the right fit. No pitch — just a straight conversation.
             </p>
 
             <div className="flex flex-col gap-5 mb-10">
@@ -1379,7 +1423,7 @@ function Contact() {
               <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-mox mb-4">What happens next</p>
               <ul className="space-y-3">
                 {[
-                  "We'll look at your current HubSpot setup and pipeline",
+                  "We'll look at your current CRM setup and pipeline",
                   "Tell you honestly whether Moximize is a fit",
                   "If we're not the right fit, we'll point you toward who is",
                 ].map((step, i) => (
@@ -1448,7 +1492,7 @@ function Footer() {
               <Logo />
             </a>
             <p className="text-[14px] text-muted-foreground leading-[1.7] max-w-[280px] mb-6">
-              AI-powered growth systems for US B2B teams on HubSpot.
+              AI-powered lead generation for B2B teams.
             </p>
             <div className="flex gap-3">
               {[
@@ -1473,9 +1517,10 @@ function Footer() {
             {
               heading: "Services",
               links: [
-                { label: "AI Lead Generation", href: "/services/ai-lead-generation" },
-                { label: "HubSpot AI Implementation", href: "/services/hubspot-ai" },
-                { label: "Fractional RevOps + AI", href: "/services/fractional-revops" },
+                { label: "AI Outbound Marketing", href: "/services/ai-outbound" },
+                { label: "AI Inbound Marketing", href: "/services/ai-inbound" },
+                { label: "Custom AI Build", href: "/services/custom-ai-build" },
+                { label: "Revenue Operations Partner", href: "/services/fractional-revops" },
               ],
             },
             {
@@ -1536,9 +1581,9 @@ export default function Page() {
     <main className="overflow-x-hidden">
       <Nav />
       <HeroGeometric
-        badge="AI Lead Generation for US B2B Teams"
+        badge="AI Lead Generation for B2B Teams"
         title1="AI-powered lead generation —"
-        title2="outbound, inbound, built on HubSpot."
+        title2="outbound, inbound, built for growth."
       />
       <HeroBottom />
       <LogoBar />

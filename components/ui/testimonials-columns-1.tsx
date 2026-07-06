@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 export const testimonials = [
   {
-    text: "Moximize didn't just run our campaigns — they rebuilt how our HubSpot works. We're booking 3x more qualified calls with the same team size.",
+    text: "Moximize didn't just run our campaigns — they rebuilt how our entire sales system works. We're booking 3x more qualified calls with the same team size.",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
     name: "VP of Sales",
     role: "Series A SaaS, Boston",
@@ -28,7 +28,7 @@ export const testimonials = [
     role: "VP Marketing, B2B SaaS",
   },
   {
-    text: "The HubSpot setup was flawless. They didn't just configure it — they taught our team how to actually use it. Adoption went from 20% to 95%.",
+    text: "The CRM setup was flawless. They didn't just configure it — they taught our team how to actually use it. Adoption went from 20% to 95%.",
     image: "https://randomuser.me/api/portraits/men/76.jpg",
     name: "David M.",
     role: "CTO, Manufacturing Co.",
@@ -46,7 +46,7 @@ export const testimonials = [
     role: "COO, Real Estate Group",
   },
   {
-    text: "They took our messy HubSpot portal and turned it into a proper revenue machine. The automations alone save us 10+ hours per week.",
+    text: "They took our messy CRM and turned it into a proper revenue machine. The automations alone save us 10+ hours per week.",
     image: "https://randomuser.me/api/portraits/women/22.jpg",
     name: "Aisha K.",
     role: "Operations Director, Agency",
@@ -64,7 +64,7 @@ export const testimonials = [
     role: "VP Sales, Enterprise SaaS",
   },
   {
-    text: "Finally an agency that speaks RevOps. They connected HubSpot to our billing system and now our forecasting is actually accurate.",
+    text: "Finally an agency that speaks RevOps. They connected our CRM to our billing system and now our forecasting is actually accurate.",
     image: "https://randomuser.me/api/portraits/women/55.jpg",
     name: "Lauren W.",
     role: "Revenue Operations Manager",
@@ -100,7 +100,7 @@ export const testimonials = [
     role: "Director of Demand Gen",
   },
   {
-    text: "Our HubSpot was a graveyard of duplicate contacts and broken workflows. Moximize cleaned it up and made it a system we trust.",
+    text: "Our CRM was a graveyard of duplicate contacts and broken workflows. Moximize cleaned it up and made it a system we trust.",
     image: "https://randomuser.me/api/portraits/women/83.jpg",
     name: "Rachel P.",
     role: "VP Operations, Consulting Firm",

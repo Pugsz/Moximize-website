@@ -5,69 +5,91 @@ import { Check, ArrowRight, Zap } from "lucide-react";
 
 const plans = [
   {
-    id: "ai-lead-gen",
-    name: "AI Lead Generation",
-    tagline: "Outbound + inbound. Fully managed with AI.",
-    bestFor: "B2B teams that need a full top-of-funnel engine",
+    id: "ai-outbound",
+    name: "AI Outbound Marketing",
+    tagline: "Qualified meetings in your calendar. Every month.",
+    bestFor: "B2B teams that need net-new pipeline without an in-house SDR",
     price: "From $4,500/mo",
     isPopular: false,
     color: "from-[#17181c] to-[#1e2128]",
     cta: "Learn more",
-    href: "/services/ai-lead-generation",
+    href: "/services/ai-outbound",
     features: [
-      { text: "AI-enriched outbound prospecting (Clay/Apollo)", included: true },
-      { text: "Cold email + LinkedIn sequences", included: true },
-      { text: "AI content strategy + SEO blog posts", included: true },
-      { text: "HubSpot landing pages + lead capture", included: true },
-      { text: "AI-powered nurture sequences", included: true },
-      { text: "Unified lead scoring (inbound + outbound)", included: true },
-      { text: "Full HubSpot pipeline sync", included: true },
-      { text: "Custom HubSpot AI workflows", included: false },
+      { text: "ICP research + Clay/Apollo AI enrichment", included: true },
+      { text: "AI-personalized cold email sequences", included: true },
+      { text: "LinkedIn outreach + connection sequences", included: true },
+      { text: "Inbox + reply management", included: true },
+      { text: "Deliverability infrastructure setup", included: true },
+      { text: "Full CRM sync (contacts, emails, meetings)", included: true },
+      { text: "Weekly performance reports", included: true },
+      { text: "AI content strategy + SEO", included: false },
       { text: "Fractional RevOps leadership", included: false },
     ],
   },
   {
-    id: "hubspot-ai",
-    name: "HubSpot AI Implementation",
-    tagline: "One build. Runs itself.",
-    bestFor: "Teams ready to turn HubSpot into an AI-powered system",
+    id: "ai-inbound",
+    name: "AI Inbound Marketing",
+    tagline: "Leads that come to you. Compounding every month.",
+    bestFor: "B2B teams building long-term pipeline through content and SEO",
+    price: "From $3,500/mo",
+    isPopular: false,
+    color: "from-[#17181c] to-[#1e2128]",
+    cta: "Learn more",
+    href: "/services/ai-inbound",
+    features: [
+      { text: "AI content strategy + keyword research", included: true },
+      { text: "4 SEO blog posts per month", included: true },
+      { text: "Landing pages + lead capture forms", included: true },
+      { text: "Lead magnet creation", included: true },
+      { text: "AI-powered nurture sequences", included: true },
+      { text: "Unified lead scoring (inbound + outbound)", included: true },
+      { text: "CRM integration + contact routing", included: true },
+      { text: "Cold email + LinkedIn outreach", included: false },
+      { text: "Fractional RevOps leadership", included: false },
+    ],
+  },
+  {
+    id: "custom-ai-build",
+    name: "Custom AI Build",
+    tagline: "We build the AI application your business actually needs.",
+    bestFor: "Teams ready to activate AI across their CRM and workflows",
     price: "From $7,500 (project)",
     isPopular: true,
     color: "from-[#0d1f3c] to-[#0a2540]",
     cta: "Learn more",
-    href: "/services/hubspot-ai",
+    href: "/services/custom-ai-build",
     features: [
-      { text: "Full HubSpot CRM build + AI automation", included: true },
-      { text: "Breeze AI lead scoring setup", included: true },
-      { text: "Custom workflows + integrations", included: true },
-      { text: "AI-powered contact enrichment", included: true },
-      { text: "Pipeline + deal stage automation", included: true },
-      { text: "Team training + documentation", included: true },
-      { text: "30-day post-build support", included: true },
+      { text: "System audit + architecture plan", included: true },
+      { text: "AI lead scoring + enrichment", included: true },
+      { text: "CRM workflow automation", included: true },
+      { text: "Custom AI application build", included: true },
+      { text: "Team training + full documentation", included: true },
+      { text: "30-day post-launch support", included: true },
+      { text: "Works with any CRM or tech stack", included: true },
       { text: "Ongoing managed services", included: false },
       { text: "Fractional RevOps leadership", included: false },
     ],
   },
   {
     id: "fractional-revops",
-    name: "Fractional RevOps + AI",
-    tagline: "A $180K hire for a fraction of the cost.",
-    bestFor: "Scaling teams who need a full RevOps function",
+    name: "Revenue Operations Partner",
+    tagline: "Fix the leaky pipeline. Ongoing RevOps + AI management.",
+    bestFor: "Scaling B2B teams that need expert RevOps without a full-time hire",
     price: "From $6,000/mo",
     isPopular: false,
     color: "from-[#0a1628] to-[#112244]",
     cta: "Learn more",
     href: "/services/fractional-revops",
     features: [
-      { text: "Fractional RevOps leadership", included: true },
-      { text: "AI workflow design + build", included: true },
-      { text: "HubSpot system management", included: true },
-      { text: "Pipeline + forecast reporting", included: true },
-      { text: "Sales + marketing alignment", included: true },
-      { text: "Weekly check-ins", included: true },
-      { text: "Priority support + dedicated Slack", included: true },
-      { text: "Custom AI integrations", included: true },
-      { text: "Quarterly business review (QBR)", included: true },
+      { text: "Weekly pipeline call (30 min)", included: true },
+      { text: "Monthly revenue report + recommendations", included: true },
+      { text: "4 workflow builds per month", included: true },
+      { text: "CRM hygiene + AI system maintenance", included: true },
+      { text: "Direct Slack access (1 biz day SLA)", included: true },
+      { text: "Quarterly business reviews", included: true },
+      { text: "$1,500 Revenue System Audit entry point", included: true },
+      { text: "Audit credited to first month within 30 days", included: true },
+      { text: "Free audit for existing clients", included: true },
     ],
   },
 ];
@@ -95,7 +117,7 @@ export default function PlansPage() {
             Services &amp; Pricing
           </span>
           <h1 className="font-bold text-[clamp(36px,5vw,64px)] tracking-tight leading-[1.05] mb-4">
-            Three Ways to Work With Us
+            Four Ways to Work With Us
           </h1>
           <p className="text-[17px] text-[#72767a] max-w-[500px] mx-auto leading-[1.7]">
             All services are outcome-priced. Full pricing and details on each service page.
@@ -103,7 +125,7 @@ export default function PlansPage() {
         </div>
 
         {/* Plans grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-16">
           {plans.map((plan) => (
             <div
               key={plan.id}
@@ -170,7 +192,7 @@ export default function PlansPage() {
 
         {/* Trust row */}
         <div className="flex flex-wrap items-center justify-center gap-8 text-[13px] text-[#72767a]">
-          {["No setup fees", "Cancel with 30 days notice", "HubSpot Certified Partner", "Results-focused pricing"].map((t) => (
+          {["No setup fees", "Cancel with 30 days notice", "AI-Certified Team", "Results-focused pricing"].map((t) => (
             <span key={t} className="flex items-center gap-2">
               <Check className="w-3.5 h-3.5 text-[#29ABE2]" />
               {t}

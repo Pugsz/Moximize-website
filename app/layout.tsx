@@ -11,9 +11,9 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://moximize.net"),
-  title: "Moximize — AI-Powered Growth Systems for US B2B Teams on HubSpot",
+  title: "Moximize — AI-Powered Lead Generation for B2B Teams",
   description:
-    "Moximize builds AI-powered growth systems for US B2B teams on HubSpot. AI Pipeline Engine, HubSpot AI Implementation, and Fractional RevOps + AI. $12M+ pipeline influenced.",
+    "Moximize runs AI-powered lead generation for B2B teams — outbound prospecting, inbound content, custom AI builds, and revenue operations. $12M+ pipeline influenced.",
   keywords: [
     "AI lead generation B2B", "outbound marketing AI", "inbound marketing AI",
     "HubSpot partner", "B2B marketing agency", "CRM implementation",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   creator: "Moximize",
   alternates: { canonical: "https://moximize.net" },
   openGraph: {
-    title: "Moximize — AI-Powered Growth Systems for US B2B Teams on HubSpot",
+    title: "Moximize — AI-Powered Lead Generation for B2B Teams",
     description:
-      "AI-powered growth systems for US B2B teams on HubSpot. $12M+ pipeline influenced, 40+ AI workflows shipped.",
+      "AI-powered lead generation for B2B teams. Outbound, inbound, custom AI builds, and revenue operations. $12M+ pipeline influenced.",
     url: "https://moximize.net",
     siteName: "Moximize",
     locale: "en_US",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Moximize — AI-Powered Growth Systems for US B2B Teams on HubSpot",
+    title: "Moximize — AI-Powered Lead Generation for B2B Teams",
     description:
-      "AI-powered growth systems for US B2B teams on HubSpot. $12M+ pipeline influenced.",
+      "AI-powered lead generation for B2B teams. Outbound, inbound, and revenue operations. $12M+ pipeline influenced.",
   },
   robots: {
     index: true,
@@ -53,7 +53,7 @@ const schemaOrg = {
   url: "https://moximize.net",
   logo: "https://moximize.net/logo.png",
   description:
-    "AI-powered B2B growth agency specialising in HubSpot CRM implementation, outbound marketing, and revenue operations.",
+    "AI-powered lead generation agency specialising in outbound marketing, inbound content, custom AI builds, and revenue operations for B2B teams.",
   telephone: "+18633407702",
   email: "nic@moximize.net",
   address: {

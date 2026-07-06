@@ -7,45 +7,56 @@ import { Check, ArrowLeft } from "lucide-react";
 import { useHubSpotForm } from "@/hooks/useHubSpotForm";
 
 const planDetails: Record<string, { name: string; price: string; color: string; perks: string[] }> = {
-  "ai-lead-gen": {
-    name: "AI Lead Generation",
+  "ai-outbound": {
+    name: "AI Outbound Marketing",
     price: "From $4,500/mo",
     color: "from-[#2B4EA0] to-[#29ABE2]",
     perks: [
-      "Outbound: cold email + LinkedIn with AI enrichment",
-      "Inbound: SEO content + HubSpot landing pages",
-      "AI-powered lead nurture sequences",
-      "Unified lead scoring flowing into HubSpot",
+      "ICP research + Clay/Apollo AI enrichment",
+      "AI-personalized cold email + LinkedIn sequences",
+      "Inbox + reply management",
+      "Full CRM sync and weekly performance reports",
     ],
   },
-  "hubspot-ai": {
-    name: "HubSpot AI Implementation",
+  "ai-inbound": {
+    name: "AI Inbound Marketing",
+    price: "From $3,500/mo",
+    color: "from-[#1a3a6b] to-[#29ABE2]",
+    perks: [
+      "AI content strategy + SEO blog posts",
+      "Landing pages + lead capture forms",
+      "AI-powered nurture sequences",
+      "90-day minimum engagement",
+    ],
+  },
+  "custom-ai-build": {
+    name: "Custom AI Build",
     price: "From $7,500 (project)",
     color: "from-[#1a3a6b] to-[#29ABE2]",
     perks: [
-      "Full HubSpot CRM build + AI automation",
-      "Lead scoring + Breeze AI setup",
-      "Custom workflows + integrations",
-      "30-day post-build support",
+      "System audit + architecture plan",
+      "AI lead scoring + CRM workflow automation",
+      "Custom AI application build",
+      "Team training + 30-day post-launch support",
     ],
   },
   "fractional-revops": {
-    name: "Fractional RevOps + AI",
+    name: "Revenue Operations Partner",
     price: "From $6,000/mo",
     color: "from-[#0a1f4e] to-[#2B4EA0]",
     perks: [
-      "Fractional RevOps leadership",
-      "AI workflow design + build",
-      "HubSpot system management",
-      "Weekly check-ins + priority support",
+      "Weekly pipeline call + monthly revenue report",
+      "4 workflow builds per month",
+      "CRM hygiene + AI system maintenance",
+      "Starts with a $1,500 Revenue System Audit",
     ],
   },
 };
 
 function GetStartedInner() {
   const params = useSearchParams();
-  const planId = params.get("plan") ?? "ai-pipeline";
-  const plan = planDetails[planId] ?? planDetails["ai-pipeline"];
+  const planId = params.get("plan") ?? "ai-outbound";
+  const plan = planDetails[planId] ?? planDetails["ai-outbound"];
 
   useHubSpotForm({ target: "#hs-getstarted-form", redirectUrl: "/thank-you" });
 
