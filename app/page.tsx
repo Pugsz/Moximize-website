@@ -4,7 +4,18 @@ import { useEffect, useRef, useState } from "react";
 import { useHubSpotForm } from "@/hooks/useHubSpotForm";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Send, TrendingUp, Cpu, Settings2, Search, MessageSquare, Target, BarChart2, Monitor, Building, Layers, Activity, Home, Zap, Mail, Phone, MapPin, Shield, Unlock, Package, Database, ClipboardList } from "lucide-react";
+
+const _iconMap: Record<string, React.FC<{ size?: number; className?: string }>> = {
+  Send, TrendingUp, Cpu, Settings2, Search, MessageSquare, Target, BarChart2,
+  Monitor, Building, Layers, Activity, Home, Zap, Mail, Phone, MapPin,
+  Shield, Unlock, Package, Database, ClipboardList,
+};
+function RenderIcon({ name, size = 18, className }: { name: string; size?: number; className?: string }) {
+  const Icon = _iconMap[name];
+  if (!Icon) return null;
+  return <Icon size={size} className={className} />;
+}
 import { cn } from "@/lib/utils";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
 import { TestimonialsColumn, testimonials } from "@/components/ui/testimonials-columns-1";
@@ -265,7 +276,7 @@ function Ticker() {
 
 const services = [
   {
-    icon: "📤",
+    icon: "Send",
     title: "AI Outbound Marketing",
     badge: "AI",
     price: "From $4,500/mo",
@@ -274,7 +285,7 @@ const services = [
     href: "/services/ai-outbound",
   },
   {
-    icon: "📥",
+    icon: "TrendingUp",
     title: "AI Inbound Marketing",
     badge: "AI",
     price: "From $3,500/mo",
@@ -283,7 +294,7 @@ const services = [
     href: "/services/ai-inbound",
   },
   {
-    icon: "🤖",
+    icon: "Cpu",
     title: "Custom AI Build",
     badge: "AI",
     price: "From $7,500 (project)",
@@ -292,7 +303,7 @@ const services = [
     href: "/services/custom-ai-build",
   },
   {
-    icon: "⚙️",
+    icon: "Settings2",
     title: "Revenue Operations Partner",
     badge: "AI",
     price: "From $6,000/mo",
@@ -331,8 +342,8 @@ function Services() {
             <Reveal key={s.title} delay={i * 0.1} className="group bg-[#17181c] hover:bg-[#1e1f24] transition-colors relative overflow-hidden">
               <div className="p-12 h-full flex flex-col">
                 <div className="flex items-start justify-between mb-7">
-                  <div className="w-12 h-12 rounded-md bg-mox/10 border border-mox/20 flex items-center justify-center text-[22px]">
-                    {s.icon}
+                  <div className="w-12 h-12 rounded-md bg-mox/10 border border-mox/20 flex items-center justify-center">
+                    <RenderIcon name={s.icon} size={20} className="text-[#29ABE2]" />
                   </div>
                   {s.badge && (
                     <span className="text-[10px] font-bold uppercase tracking-[0.12em] bg-gradient-to-r from-[#2B4EA0] to-[#29ABE2] text-white px-2.5 py-1 rounded-full">
@@ -360,7 +371,7 @@ function Services() {
 
 const aiCapabilities = [
   {
-    icon: "🔍",
+    icon: "Search",
     stat: "10x",
     statLabel: "faster prospecting",
     title: "AI Prospecting at Scale",
@@ -368,7 +379,7 @@ const aiCapabilities = [
     tools: ["Clay.com", "Apollo AI", "LinkedIn Sales Nav"],
   },
   {
-    icon: "✍️",
+    icon: "MessageSquare",
     stat: "3x",
     statLabel: "higher reply rates",
     title: "Hyper-Personalized Outreach",
@@ -376,7 +387,7 @@ const aiCapabilities = [
     tools: ["Lavender AI", "Instantly AI", "ChatGPT"],
   },
   {
-    icon: "🎯",
+    icon: "Target",
     stat: "40%",
     statLabel: "shorter sales cycles",
     title: "Predictive Lead Scoring",
@@ -384,7 +395,7 @@ const aiCapabilities = [
     tools: ["HubSpot Breeze AI", "Predictive Analytics", "RevOps"],
   },
   {
-    icon: "📊",
+    icon: "BarChart2",
     stat: "Real-time",
     statLabel: "actionable insights",
     title: "AI Reporting & Intelligence",
@@ -423,8 +434,8 @@ function AIAdvantage() {
                 <div className="absolute top-0 right-0 w-40 h-40 bg-[radial-gradient(circle,rgba(41,171,226,0.08),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                 <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2B4EA0]/30 to-[#29ABE2]/20 border border-[#29ABE2]/20 flex items-center justify-center text-[22px] shrink-0">
-                    {cap.icon}
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2B4EA0]/30 to-[#29ABE2]/20 border border-[#29ABE2]/20 flex items-center justify-center shrink-0">
+                    <RenderIcon name={cap.icon} size={20} className="text-[#29ABE2]" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-2 flex-wrap">
@@ -536,12 +547,12 @@ function Numbers() {
 /* ── markets ──────────────────────────────────────────────────────────────── */
 
 const markets = [
-  { icon: "💻", title: "SaaS & Technology", body: "Demand gen and CRM systems for software companies scaling from seed to Series B." },
-  { icon: "🏢", title: "Professional Services", body: "Consultancies, agencies, and firms that need a systematic approach to pipeline development." },
-  { icon: "🏭", title: "B2B Manufacturing", body: "Bringing modern inbound and CRM practices to industrial and manufacturing businesses." },
-  { icon: "🏥", title: "Healthcare & Wellness", body: "Marketing strategies that grow patient acquisition and referral pipelines." },
-  { icon: "🏠", title: "Real Estate", body: "Lead generation, CRM automation, and nurture flows for residential and commercial firms." },
-  { icon: "🚀", title: "Startups", body: "Early-stage go-to-market execution for founders who need traction fast and a system that scales." },
+  { icon: "Monitor", title: "SaaS & Technology", body: "Demand gen and CRM systems for software companies scaling from seed to Series B." },
+  { icon: "Building", title: "Professional Services", body: "Consultancies, agencies, and firms that need a systematic approach to pipeline development." },
+  { icon: "Layers", title: "B2B Manufacturing", body: "Bringing modern inbound and CRM practices to industrial and manufacturing businesses." },
+  { icon: "Activity", title: "Healthcare & Wellness", body: "Marketing strategies that grow patient acquisition and referral pipelines." },
+  { icon: "Home", title: "Real Estate", body: "Lead generation, CRM automation, and nurture flows for residential and commercial firms." },
+  { icon: "Zap", title: "Startups", body: "Early-stage go-to-market execution for founders who need traction fast and a system that scales." },
 ];
 
 function Markets() {
@@ -562,8 +573,8 @@ function Markets() {
               delay={i * 0.06}
               className="group flex items-start gap-4 p-8 bg-[#17181c] border border-[#242628] rounded-[12px] hover:border-mox hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(41,171,226,0.15)] transition-all duration-200"
             >
-              <div className="w-11 h-11 rounded-md bg-mox/10 border border-mox/20 flex items-center justify-center text-[20px] shrink-0">
-                {m.icon}
+              <div className="w-11 h-11 rounded-md bg-mox/10 border border-mox/20 flex items-center justify-center shrink-0">
+                <RenderIcon name={m.icon} size={18} className="text-[#29ABE2]" />
               </div>
               <div>
                 <h3 className="font-bold text-[16px] mb-1 text-foreground">{m.title}</h3>
@@ -740,7 +751,7 @@ const pricingPlans = [
     groups: [
       {
         label: "Outbound Engine",
-        icon: "📤",
+        icon: "Send",
         items: [
           { text: "ICP research + Clay/Apollo AI enrichment", included: true },
           { text: "AI-personalized cold email sequences", included: true },
@@ -750,7 +761,7 @@ const pricingPlans = [
       },
       {
         label: "CRM Integration",
-        icon: "⚙️",
+        icon: "Database",
         items: [
           { text: "Full CRM sync (contacts, emails, meetings)", included: true },
           { text: "Deliverability infrastructure setup", included: true },
@@ -775,7 +786,7 @@ const pricingPlans = [
     groups: [
       {
         label: "Inbound System",
-        icon: "📥",
+        icon: "TrendingUp",
         items: [
           { text: "AI content strategy + SEO blog posts", included: true },
           { text: "Landing pages + lead capture forms", included: true },
@@ -785,7 +796,7 @@ const pricingPlans = [
       },
       {
         label: "Lead Management",
-        icon: "🎯",
+        icon: "Target",
         items: [
           { text: "Unified lead scoring (inbound + outbound)", included: true },
           { text: "CRM integration + contact routing", included: true },
@@ -810,7 +821,7 @@ const pricingPlans = [
     groups: [
       {
         label: "What Gets Built",
-        icon: "🤖",
+        icon: "Cpu",
         items: [
           { text: "System audit + architecture plan", included: true },
           { text: "AI lead scoring + enrichment automation", included: true },
@@ -820,7 +831,7 @@ const pricingPlans = [
       },
       {
         label: "Delivery",
-        icon: "📦",
+        icon: "Package",
         items: [
           { text: "30–45 day build timeline", included: true },
           { text: "Written architecture plan before build", included: true },
@@ -845,7 +856,7 @@ const pricingPlans = [
     groups: [
       {
         label: "Monthly Deliverables",
-        icon: "⚙️",
+        icon: "Settings2",
         items: [
           { text: "Weekly pipeline call (30 min)", included: true },
           { text: "Monthly revenue report + recommendations", included: true },
@@ -855,7 +866,7 @@ const pricingPlans = [
       },
       {
         label: "Entry Point",
-        icon: "📊",
+        icon: "ClipboardList",
         items: [
           { text: "$1,500 Revenue System Audit (entry step)", included: true },
           { text: "Audit credited to first month if you continue", included: true },
@@ -910,13 +921,13 @@ function Pricing() {
         {/* Trust bar */}
         <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
           {[
-            { icon: "🤖", text: "AI-Certified Team" },
-            { icon: "📈", text: "30+ B2B Companies Helped" },
-            { icon: "🛡️", text: "90-Day Results Commitment" },
-            { icon: "🔓", text: "No Lock-In After 90 Days" },
+            { icon: "Cpu", text: "AI-Certified Team" },
+            { icon: "TrendingUp", text: "30+ B2B Companies Helped" },
+            { icon: "Shield", text: "90-Day Results Commitment" },
+            { icon: "Unlock", text: "No Lock-In After 90 Days" },
           ].map((t) => (
             <div key={t.text} className="flex items-center gap-2 bg-[#17181c] border border-[#242628] rounded-full px-4 py-2">
-              <span className="text-[15px]">{t.icon}</span>
+              <RenderIcon name={t.icon} size={14} className="text-[#29ABE2]" />
               <span className="text-[13px] font-semibold text-[#d9d9d9]">{t.text}</span>
             </div>
           ))}
@@ -1072,7 +1083,7 @@ function Pricing() {
                   {plan.groups.map((group) => (
                     <div key={group.label}>
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="text-[13px]">{group.icon}</span>
+                        <RenderIcon name={group.icon} size={13} className="text-[#29ABE2]" />
                         <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#72767a]">
                           {group.label}
                         </span>
@@ -1176,12 +1187,12 @@ function Pricing() {
 /* ── certifications ───────────────────────────────────────────────────────── */
 
 const certs = [
-  { icon: "🤖", label: "AI Automation" },
-  { icon: "📤", label: "Outbound Marketing" },
-  { icon: "📥", label: "Inbound Marketing" },
-  { icon: "⚙️", label: "Revenue Operations" },
-  { icon: "📧", label: "Email Marketing" },
-  { icon: "🎯", label: "B2B Growth" },
+  { icon: "Cpu", label: "AI Automation" },
+  { icon: "Send", label: "Outbound Marketing" },
+  { icon: "TrendingUp", label: "Inbound Marketing" },
+  { icon: "Settings2", label: "Revenue Operations" },
+  { icon: "Mail", label: "Email Marketing" },
+  { icon: "Target", label: "B2B Growth" },
 ];
 
 function Certifications() {
@@ -1194,8 +1205,8 @@ function Certifications() {
         <div className="flex flex-wrap items-center justify-center gap-12">
           {certs.map((c) => (
             <div key={c.label} className="flex flex-col items-center gap-2">
-              <div className="w-14 h-14 rounded-[12px] bg-[#17181c] border border-[#242628] flex items-center justify-center text-[26px]">
-                {c.icon}
+              <div className="w-14 h-14 rounded-[12px] bg-[#17181c] border border-[#242628] flex items-center justify-center">
+                <RenderIcon name={c.icon} size={22} className="text-[#29ABE2]" />
               </div>
               <span className="text-[12px] font-semibold uppercase tracking-[0.06em] text-muted-foreground">
                 {c.label}
@@ -1375,13 +1386,13 @@ function Contact() {
 
             <div className="flex flex-col gap-5 mb-10">
               {[
-                { icon: "📧", label: "Email", value: "nic@moximize.net", href: "mailto:nic@moximize.net" },
-                { icon: "📞", label: "Phone", value: "+1 (863) 340-7702", href: "tel:+18633407702" },
-                { icon: "📍", label: "Location", value: "Westfield Residences, Balanga City, Bataan, Philippines", href: undefined },
+                { icon: "Mail", label: "Email", value: "nic@moximize.net", href: "mailto:nic@moximize.net" },
+                { icon: "Phone", label: "Phone", value: "+1 (863) 340-7702", href: "tel:+18633407702" },
+                { icon: "MapPin", label: "Location", value: "Westfield Residences, Balanga City, Bataan, Philippines", href: undefined },
               ].map((d) => (
                 <div key={d.label} className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-md bg-mox/10 border border-mox/20 flex items-center justify-center text-[16px] shrink-0">
-                    {d.icon}
+                  <div className="w-10 h-10 rounded-md bg-mox/10 border border-mox/20 flex items-center justify-center shrink-0">
+                    <RenderIcon name={d.icon} size={16} className="text-[#29ABE2]" />
                   </div>
                   <div>
                     <strong className="block text-[13px] text-muted-foreground font-medium uppercase tracking-[0.06em] mb-0.5">

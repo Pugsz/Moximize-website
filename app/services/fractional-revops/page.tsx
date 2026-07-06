@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Search } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Revenue Operations Partner — Fix the Leaky Pipeline | Moximize",
@@ -39,7 +40,9 @@ export default function RevOpsPage() {
         {/* Audit entry point callout */}
         <div className="mb-16 p-8 bg-[#29ABE2]/5 border border-[#29ABE2]/20 rounded-[24px]">
           <div className="flex items-start gap-4">
-            <span className="text-[32px] shrink-0">🔍</span>
+            <div className="w-10 h-10 rounded-md bg-[#29ABE2]/10 border border-[#29ABE2]/20 flex items-center justify-center shrink-0 mt-1">
+              <Search size={18} className="text-[#29ABE2]" />
+            </div>
             <div>
               <h2 className="font-bold text-[20px] mb-2">Start with a Revenue System Audit — $1,500</h2>
               <p className="text-[15px] text-[#d9d9d9] leading-[1.7] mb-4">
